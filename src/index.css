@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --bg: #03030a;
-  --accent: #6C63FF;
-  --accent-soft: rgba(108, 99, 255, 0.15);
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --bg: #f9fdf9; /* Soft white/mint green */
+  --accent: #10b981; /* Emerald Green */
+  --accent-soft: rgba(16, 185, 129, 0.15);
+  --glass: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(16, 185, 129, 0.1);
   --burger-width: 25px;
   --burger-height: 2.5px;
   --burger-spacing: 6px;
-  --burger-color: #ffffff;
+  --burger-color: #064e3b; /* Deep Green for text/icons */
   --ease-pendulum: cubic-bezier(0.5, 1.5, 0.5, 1);
 }
 
 body {
   background-color: var(--bg);
   font-family: 'Poppins', sans-serif;
-  color: #ffffff;
+  color: #111827; /* Dark Gray for readability */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -31,24 +31,25 @@ html {
 
 /* Selection styling */
 ::selection {
-  background: rgba(108, 99, 255, 0.3);
-  color: #fff;
+  background: rgba(16, 185, 129, 0.2);
+  color: #064e3b;
 }
 
 ::-moz-selection {
-  background: rgba(108, 99, 255, 0.3);
-  color: #fff;
+  background: rgba(16, 185, 129, 0.2);
+  color: #064e3b;
 }
 
 /* Refined Glass Card */
 .pro-card {
   background: var(--glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--glass-border);
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 .pro-card::before {
   content: '';
@@ -56,16 +57,16 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.5), transparent);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 .pro-card:hover {
-  border-color: rgba(108, 99, 255, 0.5);
-  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(255, 255, 255, 0.9);
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px -12px rgba(108, 99, 255, 0.25), 0 0 0 1px rgba(108, 99, 255, 0.1);
+  box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1), 0 10px 10px -5px rgba(16, 185, 129, 0.04);
 }
 .pro-card:hover::before {
   opacity: 1;
@@ -73,7 +74,7 @@ html {
 
 /* Professional Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #059669 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -84,9 +85,9 @@ html {
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(108, 99, 255, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 50% -20%, #1e1b4b 0%, transparent 60%);
+    radial-gradient(circle at 20% 30%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 50% -20%, #ecfdf5 0%, transparent 60%);
   z-index: -1;
   pointer-events: none;
   animation: bg-pulse 8s ease-in-out infinite;
@@ -98,10 +99,11 @@ html {
 
 /* Button Styling */
 .btn-primary {
-  background: linear-gradient(90deg, #6C63FF, #8b5cf6, #a78bfa);
+  background: linear-gradient(90deg, #10b981, #059669, #10b981);
   background-size: 200% 100%;
+  color: white;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4), 0 0 0 0 rgba(108, 99, 255, 0);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2), 0 0 0 0 rgba(16, 185, 129, 0);
   position: relative;
   overflow: hidden;
 }
@@ -117,8 +119,9 @@ html {
 }
 .btn-primary:hover {
   background-position: 100% 0;
-  box-shadow: 0 8px 30px rgba(108, 99, 255, 0.6), 0 0 0 4px rgba(108, 99, 255, 0.1);
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.3), 0 0 0 4px rgba(16, 185, 129, 0.1);
   transform: translateY(-2px) scale(1.02);
+  color: white;
 }
 .btn-primary:hover::before {
   left: 100%;
@@ -128,7 +131,7 @@ html {
 }
 .btn-primary:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.5);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.5);
 }
 
 /* Focus styles for accessibility */

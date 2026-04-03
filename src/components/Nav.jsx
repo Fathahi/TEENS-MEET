@@ -3,7 +3,7 @@ import { smoothScrollTo } from '../utils/smoothScroll'
 import { getImagePath } from '../utils/imagePath'
 import GradualBlur from './GradualBlur'
 
-const SECTIONS = ['home', 'about', 'events', 'speakers', 'recent-activity', 'contact']
+const SECTIONS = ['home', 'about', 'schedule', 'sessions', 'register']
 const SCROLL_OFFSET = 100
 
 const Nav = () => {
@@ -67,29 +67,15 @@ const Nav = () => {
   const navLinks = useMemo(() => [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'events', label: 'Events' },
-    { id: 'speakers', label: 'Speakers' },
-    { id: 'recent-activity', label: 'Past Events' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'schedule', label: 'Schedule' },
+    { id: 'sessions', label: 'Sessions' },
+    { id: 'register', label: 'Register' },
   ], [])
 
   return (
     <>
-      {/* Gradual Blur at Top */}
-      <GradualBlur
-        target="page"
-        position="top"
-        height="8rem"
-        strength={2}
-        divCount={5}
-        curve="bezier"
-        exponential={true}
-        opacity={1}
-        zIndex={40}
-      />
-
       {/* Desktop Navigation */}
-      <nav className="hidden min-[935px]:block fixed top-0 w-full z-[10000]" role="navigation" aria-label="Main navigation">
+      <nav className="hidden min-[935px]:block fixed top-0 w-full z-[10000] bg-white/80 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo - Left */}
           <a 
@@ -97,18 +83,18 @@ const Nav = () => {
             className="flex items-center gap-2 focus:outline-none"
             aria-label="Go to home section"
           >
-            <img src={getImagePath('/icons/ufuq-logo.webp')} alt="UFUQ Logo" className="h-[50px]" />
+            <span className="text-2xl font-bold text-emerald-600">Teens Meet</span>
           </a>
           
           {/* Navigation Links - Center */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-8 items-center text-sm font-medium text-gray-400">
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-8 items-center text-sm font-semibold text-emerald-900/60">
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`hover:text-white transition-colors focus:outline-none px-2 ${
-                  activeSection === link.id ? 'text-white' : ''
+                className={`hover:text-emerald-600 transition-colors focus:outline-none px-2 ${
+                  activeSection === link.id ? 'text-emerald-600' : ''
                 }`}
                 aria-current={activeSection === link.id ? 'page' : undefined}
               >
@@ -119,11 +105,10 @@ const Nav = () => {
           
           {/* Register Button - Right */}
           <a 
-            href="https://ufuqstfsiokerala.eventhex.ai/#tickets"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary px-6 py-2.5 rounded-full text-white font-semibold tracking-wide focus:outline-none"
-            aria-label="Register for UFUQ 2026"
+            href="#register"
+            onClick={(e) => handleNavClick(e, 'register')}
+            className="btn-primary px-8 py-3 rounded-full text-white font-bold tracking-wide focus:outline-none shadow-lg shadow-emerald-500/20"
+            aria-label="Register for Teens Meet 2026"
           >
             Register Now
           </a>
@@ -131,7 +116,7 @@ const Nav = () => {
       </nav>
 
       {/* Mobile Navigation */}
-      <nav className="max-[934px]:block min-[935px]:hidden fixed top-0 w-full z-[10000]" role="navigation" aria-label="Mobile navigation">
+      <nav className="max-[934px]:block min-[935px]:hidden fixed top-0 w-full z-[10000] bg-white/90 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Mobile navigation">
         <div className="px-6 h-20 flex items-center justify-between">
           {/* Logo */}
           <a 
@@ -139,7 +124,7 @@ const Nav = () => {
             className="flex items-center gap-2 focus:outline-none"
             aria-label="Go to home section"
           >
-            <img src={getImagePath('/icons/ufuq-logo.webp')} alt="UFUQ Logo" className="h-[50px]" />
+            <span className="text-xl font-bold text-emerald-600">Teens Meet</span>
           </a>
           
           {/* Mobile Menu Button */}
@@ -157,7 +142,7 @@ const Nav = () => {
 
         {/* Mobile Menu Overlay */}
         <div 
-          className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 z-[9999] ${
+          className={`fixed inset-0 bg-emerald-900/20 backdrop-blur-sm transition-opacity duration-300 z-[9999] ${
             isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
           onClick={() => setIsMenuOpen(false)}
@@ -166,19 +151,19 @@ const Nav = () => {
 
         {/* Mobile Menu Slide Panel */}
         <div 
-          className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-[rgba(15,15,25,0.98)] to-[rgba(10,10,20,0.98)] backdrop-blur-xl border-l border-[rgba(108,99,255,0.2)] shadow-2xl z-[10000] transition-transform duration-300 ease-out ${
+          className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white backdrop-blur-xl border-l border-emerald-100 shadow-2xl z-[10000] transition-transform duration-300 ease-out ${
             isMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          <div className="px-6 py-8 flex flex-col gap-4 h-full overflow-y-auto">
+          <div className="px-8 py-12 flex flex-col gap-6 h-full overflow-y-auto">
             {/* Navigation Links */}
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`text-lg font-semibold transition-colors focus:outline-none py-2 ${
-                  activeSection === link.id ? 'text-white' : 'text-gray-400 hover:text-white'
+                className={`text-xl font-bold transition-colors focus:outline-none py-2 ${
+                  activeSection === link.id ? 'text-emerald-600' : 'text-emerald-950 hover:text-emerald-600'
                 }`}
                 aria-current={activeSection === link.id ? 'page' : undefined}
               >
@@ -186,11 +171,10 @@ const Nav = () => {
               </a>
             ))}
             <a 
-              href="https://ufuqstfsiokerala.eventhex.ai/#tickets"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary px-6 py-2.5 rounded-full text-white font-semibold tracking-wide focus:outline-none text-center mt-4"
-              aria-label="Register for UFUQ 2026"
+              href="#register"
+              onClick={(e) => handleNavClick(e, 'register')}
+              className="btn-primary px-6 py-4 rounded-2xl text-white font-bold tracking-wide focus:outline-none text-center mt-6 shadow-xl shadow-emerald-500/20"
+              aria-label="Register for Teens Meet 2026"
             >
               Register Now
             </a>
