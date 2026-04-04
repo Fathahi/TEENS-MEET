@@ -23,11 +23,16 @@ const Stats = () => {
 }
 
 const StatCard = memo(({ stat }) => (
-  <div className="pro-card p-6 md:p-8 rounded-2xl text-center group hover:bg-white/5 transition-all duration-300">
-    <p className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white via-indigo-200 to-white/60 mb-3 group-hover:scale-110 transition-transform duration-300" aria-label={stat.value}>
+  <div className="pro-card p-6 md:p-10 rounded-3xl text-center group hover:bg-emerald-500/5 transition-all duration-500 border-white/5">
+    <p 
+      className="text-5xl md:text-6xl font-black text-white mb-4 group-hover:scale-110 transition-transform duration-500 font-outfit tracking-tighter" 
+      aria-label={stat.value}
+    >
       {stat.value}
     </p>
-    <p className="text-xs md:text-sm text-indigo-300/80 uppercase tracking-widest font-semibold group-hover:text-indigo-200 transition-colors">{stat.label}</p>
+    <p className="text-[10px] md:text-xs text-emerald-400 uppercase tracking-[0.2em] font-black opacity-70 group-hover:opacity-100 transition-all">
+      {stat.label}
+    </p>
   </div>
 ))
 

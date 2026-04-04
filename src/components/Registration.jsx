@@ -1,9 +1,16 @@
 import { useState, memo } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
-const CAMPUSES = [
-  'Campus 1', 'Campus 2', 'Campus 3', 'Campus 4', 'Campus 5', 'Campus 6'
-]
+// Google Form Submission URL
+const GOOGLE_FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSfUpFD2B--NGYMq7cmuoJ68Y9RTGgkxSs7idk6HptY5QZyTxw/formResponse";
+
+// Google Form Field IDs
+const FIELD_IDS = {
+  name: 'entry.2092238618',
+  phone: 'entry.1556369182',
+  school: 'entry.479301265',
+  place: 'entry.1753222212'
+};
 
 const Registration = () => {
   const headerRef = useReveal()
@@ -12,10 +19,9 @@ const Registration = () => {
   const [isSuccess, setIsSuccess] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    campus: '',
     school: '',
+    place: '',
   })
 
   const handleChange = (e) => {
@@ -23,14 +29,30 @@ const Registration = () => {
     setFormData(prev => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSuccess(true)
-    }, 1500)
+
+    const googleFormData = new FormData();
+    googleFormData.append(FIELD_IDS.name, formData.name);
+    googleFormData.append(FIELD_IDS.phone, formData.phone);
+    googleFormData.append(FIELD_IDS.school, formData.school);
+    googleFormData.append(FIELD_IDS.place, formData.place);
+
+    try {
+      // no-cors mode is necessary for Google Form POST if you don't have a backend proxy
+      await fetch(GOOGLE_FORM_ACTION, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: googleFormData
+      });
+      setIsSuccess(true);
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Registration failed. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -78,22 +100,6 @@ const Registration = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-3">
-                  <label htmlFor="campus" className="block text-sm font-bold text-emerald-900 ml-1">Preferred Campus</label>
-                  <select
-                    id="campus"
-                    name="campus"
-                    value={formData.campus}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all appearance-none"
-                  >
-                    <option value="" disabled>Select a campus</option>
-                    {CAMPUSES.map(campus => (
-                      <option key={campus} value={campus}>{campus}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="space-y-3">
                   <label htmlFor="school" className="block text-sm font-bold text-emerald-900 ml-1">School Name</label>
                   <input
                     type="text"
@@ -106,21 +112,21 @@ const Registration = () => {
                     className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
                   />
                 </div>
+                <div className="space-y-3">
+                  <label htmlFor="place" className="block text-sm font-bold text-emerald-900 ml-1">Your Place / Location</label>
+                  <input
+                    type="text"
+                    id="place"
+                    name="place"
+                    value={formData.place}
+                    onChange={handleChange}
+                    required
+                    placeholder="Enter your place"
+                    className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                  />
+                </div>
               </div>
 
-              <div className="space-y-3">
-                <label htmlFor="email" className="block text-sm font-bold text-emerald-900 ml-1">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="Enter your email"
-                  className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
-                />
-              </div>
 
               <div className="pt-6">
                 <button
@@ -141,8 +147,8 @@ const Registration = () => {
               </div>
               <h3 className="text-3xl font-bold text-emerald-900">Registration Successful!</h3>
               <p className="text-gray-600 text-lg">
-                We've received your registration for <strong>{formData.campus}</strong>. 
-                Keep an eye on your phone and email for further updates.
+                We've received your registration for <strong>{formData.place}</strong>. 
+                Keep an eye on your phone for further updates.
               </p>
               <button
                 onClick={() => setIsSuccess(false)}

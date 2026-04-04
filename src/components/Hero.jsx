@@ -53,12 +53,41 @@ const Hero = () => {
           </h1>
 
           {/* Subheader */}
-          <p className="text-lg md:text-xl text-emerald-50/80 mb-12 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">
-            An exclusive gathering for 10th pass-out students to explore, learn, and lead.
+          <p className="text-lg md:text-xl text-emerald-50/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">
+            An exclusive gathering for 10th pass-out students to explore, learn, and lead. 
             Join 600+ peers across 6 campuses for a life-changing experience.
           </p>
 
+          {/* Stats Bar */}
+          <div className="hero-stats flex justify-center gap-12 md:gap-24 mb-16 px-4">
+            <div className="stat text-center">
+              <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
+                600+
+              </div>
+              <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
+                Participants
+              </div>
+            </div>
+            <div className="stat text-center border-x border-white/10 px-12 md:px-24">
+              <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
+                6
+              </div>
+              <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
+                Locations
+              </div>
+            </div>
+            <div className="stat text-center">
+              <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
+                30+
+              </div>
+              <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
+                Expert Speakers
+              </div>
+            </div>
+          </div>
+
           {/* CTAs */}
+
           <div className="flex flex-col sm:flex-row gap-5 justify-center mt-12">
             <a
               href="#register"
