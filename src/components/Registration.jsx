@@ -12,6 +12,15 @@ const FIELD_IDS = {
   place: 'entry.1753222212'
 };
 
+const LOCATIONS = [
+  'Location 1',
+  'Location 2',
+  'Location 3',
+  'Location 4',
+  'Location 5',
+  'Location 6'
+];
+
 const Registration = () => {
   const headerRef = useReveal()
   const formRef = useReveal()
@@ -61,7 +70,7 @@ const Registration = () => {
         <div ref={headerRef} className="mb-16 reveal text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Join Teens Meet 2026</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            Ready to shape your future? Seats are limited to 100 per campus. 
+            Ready to shape your future? Seats are limited to 100 per location. 
             Select your preferred location and fill in your details to register.
           </p>
         </div>
@@ -113,17 +122,20 @@ const Registration = () => {
                   />
                 </div>
                 <div className="space-y-3">
-                  <label htmlFor="place" className="block text-sm font-bold text-emerald-900 ml-1">Your Place / Location</label>
-                  <input
-                    type="text"
+                  <label htmlFor="place" className="block text-sm font-bold text-emerald-900 ml-1">Preferred Location</label>
+                  <select
                     id="place"
                     name="place"
                     value={formData.place}
                     onChange={handleChange}
                     required
-                    placeholder="Enter your place"
-                    className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
-                  />
+                    className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled>Select a location</option>
+                    {LOCATIONS.map(loc => (
+                      <option key={loc} value={loc}>{loc}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
 

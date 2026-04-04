@@ -31,7 +31,7 @@ const Sessions = () => {
     },
     {
       title: 'Mental Well-being',
-      description: 'Building resilience for campus life. Practical tools for managing stress and maintaining mental health in a competitive world.',
+      description: 'Building resilience for college life. Practical tools for managing stress and maintaining mental health in a competitive world.',
       tag: 'Wellness',
       gradient: 'from-green-500 to-emerald-600',
     },

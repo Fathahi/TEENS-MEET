@@ -24,7 +24,7 @@ const About = () => {
         </svg>
       ),
       title: 'Networking',
-      description: 'Connect with 600+ motivated peers from different campuses, building a community of future leaders.',
+      description: 'Connect with 600+ motivated peers from different locations, building a community of future leaders.',
       color: 'teal'
     },
     {
@@ -53,7 +53,7 @@ const About = () => {
       <div ref={sectionRef} className="text-center mb-20 reveal">
         <h2 className="text-3xl md:text-5xl font-bold mb-6 text-emerald-950">Why Teens Meet?</h2>
         <p className="text-emerald-900/60 max-w-2xl mx-auto text-lg font-medium leading-relaxed">
-          The transition from school to campus life is a turning point. Teens Meet is designed to provide 10th-grade graduates with the moral grounding, academic clarity, and leadership skills needed for the next chapter of their lives.
+          The transition from school to college life is a turning point. Teens Meet is designed to provide 10th-grade graduates with the moral grounding, academic clarity, and leadership skills needed for the next chapter of their lives.
         </p>
       </div>
 

@@ -3,7 +3,7 @@ import { smoothScrollTo } from '../utils/smoothScroll'
 import { getImagePath } from '../utils/imagePath'
 import GradualBlur from './GradualBlur'
 
-const SECTIONS = ['home', 'about', 'schedule', 'sessions', 'register']
+const SECTIONS = ['home', 'about', 'schedule', 'guests', 'sessions', 'register']
 const SCROLL_OFFSET = 100
 
 const Nav = () => {
@@ -68,6 +68,7 @@ const Nav = () => {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'schedule', label: 'Schedule' },
+    { id: 'guests', label: 'Guests' },
     { id: 'sessions', label: 'Sessions' },
     { id: 'register', label: 'Register' },
   ], [])

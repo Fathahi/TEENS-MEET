@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
   --font-outfit: 'Outfit', sans-serif;
@@ -778,4 +778,16 @@ body.dg-scroll-lock {
 
 .item[data-focused="true"] {
   z-index: 50;
+}
+
+/* Lightbox pop animation */
+@keyframes lightbox-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

@@ -54,8 +54,8 @@ const Hero = () => {
 
           {/* Subheader */}
           <p className="text-lg md:text-xl text-emerald-50/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">
-            An exclusive gathering for 10th pass-out students to explore, learn, and lead. 
-            Join 600+ peers across 6 campuses for a life-changing experience.
+            An exclusive gathering for 10th pass-out students to explore, learn, and lead.
+            Join 600+ peers across 6 locations for a life-changing experience.
           </p>
 
           {/* Stats Bar */}
