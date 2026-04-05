@@ -96,7 +96,7 @@ const GuestCard = ({ guest, index }) => {
       <p className="text-sm text-emerald-900/60 leading-relaxed italic">
         "{guest.description}"
       </p>
-      
+
       <div className="mt-6 flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
         <button className="w-8 h-8 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center hover:bg-emerald-600 hover:text-white transition-all">
           <i className="fab fa-twitter text-sm"></i>
