@@ -13,12 +13,12 @@ const FIELD_IDS = {
 };
 
 const LOCATIONS = [
-  'Location 1',
-  'Location 2',
-  'Location 3',
-  'Location 4',
-  'Location 5',
-  'Location 6'
+  'Feroke',
+  'City',
+  'Kunnamangalam',
+  'Mukkam',
+  'Meppayyur',
+  'Vadakara',
 ];
 
 const Registration = () => {

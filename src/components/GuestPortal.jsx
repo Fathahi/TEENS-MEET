@@ -1,30 +1,35 @@
 import { useReveal } from '../hooks/useReveal';
 import { memo } from 'react';
 
+import abdulVahidImg from '/guests/abdul_vahid.png';
+import sahelBasImg from '/guests/sahel_bas.png';
+import raheemKcImg from '/guests/raheem_kc.png';
+import ameenNasihImg from '/guests/ameen_nasih.png';
+
 const GUESTS = [
   {
-    name: 'Dr. Abdussalam',
-    role: 'Educationalist',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
-    description: 'Expert in higher education and strategic career development.'
+    name: 'Adv. Abdul Vahid',
+    role: 'President, SIO Kerala',
+    image: abdulVahidImg,
+    description: 'Leading the Students Islamic Organisation of India, Kerala unit, with vision and excellence.'
   },
   {
-    name: 'Adv. Mujeeb Rahman',
-    role: 'Social Activist',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-    description: 'A leading advocate for youth empowerment and community justice.'
+    name: 'Sahel Bas',
+    role: 'Secretary, SIO Kerala',
+    image: sahelBasImg,
+    description: 'Driving student empowerment and community growth across Kerala as SIO State Secretary.'
   },
   {
-    name: 'Prof. Naseer Ali',
-    role: 'Career Consultant',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
-    description: 'Providing students with the tools to navigate modern career paths.'
+    name: 'Abdu Raheem KC',
+    role: 'President, SIO Kozhikode',
+    image: raheemKcImg,
+    description: 'Leading the SIO Kozhikode district with a strong commitment to youth development.'
   },
   {
-    name: 'Shabeer Kodiyathur',
-    role: 'Youth Icon',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop',
-    description: 'Inspirational speaker focused on identity and moral leadership.'
+    name: 'Ameen Nasih',
+    role: 'Secretary, SIO Kozhikode',
+    image: ameenNasihImg,
+    description: 'Organizing and inspiring the next generation of student leaders across Kozhikode.'
   }
 ];
 

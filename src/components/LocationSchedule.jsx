@@ -2,12 +2,12 @@ import { useState, memo } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
 const LOCATIONS = [
-  { name: 'Location 1', place: '[Insert Place Name]', date: '[Insert Date]', time: '9:00 AM - 5:00 PM' },
-  { name: 'Location 2', place: '[Insert Place Name]', date: '[Insert Date]', time: '9:00 AM - 5:00 PM' },
-  { name: 'Location 3', place: '[Insert Place Name]', date: '[Insert Date]', time: '9:00 AM - 5:00 PM' },
-  { name: 'Location 4', place: '[Insert Place Name]', date: '[Insert Date]', time: '9:00 AM - 5:00 PM' },
-  { name: 'Location 5', place: '[Insert Place Name]', date: '[Insert Date]', time: '9:00 AM - 5:00 PM' },
-  { name: 'Location 6', place: '[Insert Place Name]', date: '[Insert Date]', time: '9:00 AM - 5:00 PM' },
+  { name: 'Feroke',         place: 'Feroke, Kozhikode',         date: 'TBA' },
+  { name: 'City',           place: 'Kozhikode City',             date: 'TBA' },
+  { name: 'Kunnamangalam',  place: 'Kunnamangalam, Kozhikode',   date: 'TBA' },
+  { name: 'Mukkam',         place: 'Mukkam, Kozhikode',          date: 'TBA' },
+  { name: 'Meppayyur',      place: 'Meppayyur, Kozhikode',       date: 'TBA' },
+  { name: 'Vadakara',       place: 'Vadakara, Kozhikode',        date: 'TBA' },
 ]
 
 const LocationSchedule = () => {
@@ -29,7 +29,6 @@ const LocationSchedule = () => {
               <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Location Name</th>
               <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Place</th>
               <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Date</th>
-              <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Time</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-emerald-100">
@@ -41,11 +40,6 @@ const LocationSchedule = () => {
                 <td className="px-6 py-5 font-semibold text-emerald-900 group-hover:text-emerald-600">{loc.name}</td>
                 <td className="px-6 py-5 text-gray-700">{loc.place}</td>
                 <td className="px-6 py-5 text-gray-700">{loc.date}</td>
-                <td className="px-6 py-5">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">
-                    {loc.time}
-                  </span>
-                </td>
               </tr>
             ))}
           </tbody>

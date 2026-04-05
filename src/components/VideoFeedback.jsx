@@ -25,13 +25,13 @@ const VideoFeedback = () => {
       <div className="max-w-5xl mx-auto text-center">
         <div ref={headerRef} className="mb-16 reveal">
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-emerald-400 text-[10px] font-black uppercase tracking-[0.2em] mb-4 border border-white/5 backdrop-blur-sm">
-            Event Highlights
+            Student Feedback
           </span>
           <h2 className="text-3xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter">
-            Experience the <span className="text-emerald-400 font-black">Energy</span>
+            They Thought It'd Be <span className="text-emerald-400 font-black">Boring...</span>
           </h2>
           <p className="text-emerald-50/60 max-w-2xl mx-auto text-lg font-medium leading-relaxed italic">
-            "A glimpse into the transformation, the community, and the inspiration that defines Teens Meet."
+            "We came in with zero expectations — honestly thought it would be just another camp. But it turned out to be one of the best experiences of our lives."
           </p>
         </div>
 
@@ -70,18 +70,18 @@ const VideoFeedback = () => {
 
           {/* Subtle info overlay */}
           <div className="absolute bottom-6 right-8 text-white/40 text-xs font-bold tracking-widest uppercase pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
-            Featured Highlight • Previous Event
+            Student Feedback • Teens Meet 2025
           </div>
         </div>
 
         <div className="mt-12 flex justify-center gap-6 text-emerald-400/60 text-sm font-bold uppercase tracking-widest">
           <span className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            Live Coverage
+            Real Voices
           </span>
           <span className="flex items-center gap-2">
-            <i className="fas fa-history"></i>
-            Archival Feedback
+            <i className="fas fa-heart"></i>
+            Genuine Reactions
           </span>
         </div>
       </div>
