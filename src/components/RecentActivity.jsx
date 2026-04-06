@@ -138,7 +138,7 @@ const RecentActivity = () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
           <h2 className="text-2xl font-bold border-l-4 border-indigo-500 pl-4">What we've been up to lately</h2>
           <a 
-            href="https://ufuq.siokerala.org/hackathon" 
+            href="https://teensmeet.siokerala.org/hackathon" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-2 transition-colors group"

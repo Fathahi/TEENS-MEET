@@ -372,7 +372,7 @@ export const EventCard = memo(({ event, index }) => {
           <div className="mt-auto pt-4">
             <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-4"></div>
             <a 
-              href="https://ufuq.siokerala.org/hackathon" 
+              href="https://teensmeet.siokerala.org/hackathon" 
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full px-4 py-2.5 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold text-sm text-center hover:from-indigo-500 hover:to-purple-500 active:from-indigo-700 active:to-purple-700 active:scale-95 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/40 flex items-center justify-center gap-2 touch-manipulation min-h-[44px]"

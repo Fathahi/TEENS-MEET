@@ -1,6 +1,6 @@
-# UFUQ 2026 — Science & Technology Fest
+# TEENS MEET 2026 — Science & Technology Fest
 
-A modern React application for the UFUQ 2026 Science & Technology Fest website.
+A modern React application for the TEENS MEET 2026 Science & Technology Fest website.
 
 ## 🚀 Getting Started
 
@@ -77,7 +77,7 @@ The built files will be in the `dist` folder.
 ## 🌐 Deployment
 
 This app is automatically deployed to GitHub Pages:
-- **Live Site**: https://irshad9747.github.io/ufuq-landing-page/
+- **Live Site**: https://fathahi.github.io/TEENS-MEET/
 - **GitHub Actions**: Automatically builds and deploys on every push to `main` branch
 
 It can also be deployed to:

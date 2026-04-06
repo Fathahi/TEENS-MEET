@@ -4,7 +4,7 @@ import { useReveal } from '../hooks/useReveal'
 
 const Hero = () => {
   const contentRef = useReveal()
-  const bgImage = '/ufuq-landing-page/gallery/landing page image.png'
+  const bgImage = '/gallery/landing page image.png'
 
   return (
     <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
