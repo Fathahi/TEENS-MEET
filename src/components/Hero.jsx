@@ -4,7 +4,7 @@ import { useReveal } from '../hooks/useReveal'
 
 const Hero = () => {
   const contentRef = useReveal()
-  const bgImage = '/gallery/landing page image.png'
+  const bgImage = '/main/teensmeet.png'
 
   return (
     <header id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -18,13 +18,12 @@ const Hero = () => {
         >
           <img
             src={bgImage}
-            alt="Teens at sunset"
-            className="w-full h-full object-cover object-[25%_center] md:object-center"
+            alt="Teens Meet 2026"
+            className="w-full h-full object-cover object-center"
           />
-          {/* Multi-layer Overlays for Contrast & Depth */}
-          <div className="absolute inset-0 bg-emerald-950/40 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/60 via-transparent to-emerald-950/80"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-950/20 via-transparent to-emerald-950/20"></div>
+          {/* Lighter overlays so image is clearly visible */}
+          <div className="absolute inset-0 bg-emerald-950/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-950/40 via-transparent to-emerald-950/60"></div>
         </motion.div>
       </div>
 
@@ -46,11 +45,14 @@ const Hero = () => {
             <span>Kozhikode District &bull; May 2026</span>
           </div>
 
-          {/* Main Heading */}
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black leading-[1.05] mb-10 tracking-tighter text-white uppercase drop-shadow-2xl">
-            Teens Meet <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300 drop-shadow-none">2026</span>
-          </h1>
+          {/* Logo Image as Main Heading */}
+          <div className="flex justify-center mb-10">
+            <img
+              src="/icons/teens-meet-logo-white.png"
+              alt="Teens Meet 2026"
+              className="h-32 md:h-48 lg:h-56 w-auto drop-shadow-2xl"
+            />
+          </div>
 
           {/* Subheader */}
           <p className="text-lg md:text-xl text-emerald-50/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">
@@ -59,35 +61,42 @@ const Hero = () => {
           </p>
 
           {/* Stats Bar */}
-          <div className="hero-stats flex justify-center gap-12 md:gap-24 mb-16 px-4">
+          <div className="hero-stats flex flex-wrap justify-center gap-8 md:gap-16 mb-16 px-4">
             <div className="stat text-center">
               <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
                 600+
               </div>
               <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
-                Participants
+                Students
               </div>
             </div>
-            <div className="stat text-center border-x border-white/10 px-12 md:px-24">
+            <div className="stat text-center border-x border-white/10 px-8 md:px-16">
               <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
-                6
+                100+
               </div>
               <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
-                Locations
+                Guests
+              </div>
+            </div>
+            <div className="stat text-center border-r border-white/10 pr-8 md:pr-16">
+              <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
+                60+
+              </div>
+              <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
+                Mentors
               </div>
             </div>
             <div className="stat text-center">
               <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
-                30+
+                06+
               </div>
               <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
-                Expert Speakers
+                Places
               </div>
             </div>
           </div>
 
           {/* CTAs */}
-
           <div className="flex flex-col sm:flex-row gap-5 justify-center mt-12">
             <a
               href="#register"

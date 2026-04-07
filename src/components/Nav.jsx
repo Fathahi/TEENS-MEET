@@ -84,7 +84,7 @@ const Nav = () => {
             className="flex items-center gap-2 focus:outline-none"
             aria-label="Go to home section"
           >
-            <span className="text-2xl font-bold text-emerald-600">Teens Meet</span>
+            <img src="/icons/teens-meet-logo-black.png" alt="Teens Meet Logo" className="h-14 w-auto" />
           </a>
           
           {/* Navigation Links - Center */}
@@ -108,7 +108,7 @@ const Nav = () => {
           <a 
             href="#register"
             onClick={(e) => handleNavClick(e, 'register')}
-            className="btn-primary px-8 py-3 rounded-full text-white font-bold tracking-wide focus:outline-none shadow-lg shadow-emerald-500/20"
+            className="btn-primary-white font-bold tracking-wide focus:outline-none shadow-lg shadow-emerald-500/20"
             aria-label="Register for Teens Meet 2026"
           >
             Register Now
@@ -125,7 +125,7 @@ const Nav = () => {
             className="flex items-center gap-2 focus:outline-none"
             aria-label="Go to home section"
           >
-            <span className="text-xl font-bold text-emerald-600">Teens Meet</span>
+            <img src="/icons/teens-meet-logo-black.png" alt="Teens Meet Logo" className="h-12 w-auto" />
           </a>
           
           {/* Mobile Menu Button */}
@@ -143,7 +143,7 @@ const Nav = () => {
 
         {/* Mobile Menu Overlay */}
         <div 
-          className={`fixed inset-0 bg-emerald-900/20 backdrop-blur-sm transition-opacity duration-300 z-[9999] ${
+          className={`fixed inset-0 bg-emerald-500/10/20 backdrop-blur-sm transition-opacity duration-300 z-[9999] ${
             isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
           onClick={() => setIsMenuOpen(false)}
@@ -174,7 +174,7 @@ const Nav = () => {
             <a 
               href="#register"
               onClick={(e) => handleNavClick(e, 'register')}
-              className="btn-primary px-6 py-4 rounded-2xl text-white font-bold tracking-wide focus:outline-none text-center mt-6 shadow-xl shadow-emerald-500/20"
+              className="btn-primary-white font-bold tracking-wide focus:outline-none text-center mt-6 shadow-xl shadow-emerald-500/20"
               aria-label="Register for Teens Meet 2026"
             >
               Register Now

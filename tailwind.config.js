@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': ['Poppins', 'sans-serif'],
-        'amiri': ['Amiri', 'serif'],
+        'outfit': ['Outfit', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
       },
     },
   },

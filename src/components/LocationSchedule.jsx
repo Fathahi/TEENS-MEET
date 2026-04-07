@@ -25,7 +25,7 @@ const LocationSchedule = () => {
       <div className="overflow-x-auto rounded-3xl border border-emerald-100 shadow-xl shadow-emerald-500/5 bg-white/50 backdrop-blur-md">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-emerald-500 text-white">
+            <tr className="bg-emerald-600-white">
               <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Location Name</th>
               <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Place</th>
               <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Date</th>

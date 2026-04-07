@@ -31,7 +31,7 @@ class ErrorBoundary extends React.Component {
                 this.setState({ hasError: false, error: null })
                 window.location.reload()
               }}
-              className="btn-primary px-6 py-3 rounded-xl font-semibold text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a]"
+              className="btn-primary-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a]"
             >
               Refresh Page
             </button>

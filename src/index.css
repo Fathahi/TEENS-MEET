@@ -1,13 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-outfit: 'Outfit', sans-serif;
-  --font-inter: 'Inter', sans-serif;
-  --bg: #f9fdf9; /* Soft white/mint green */
+  --bg: #f9fdf9;
   --accent: #10b981; /* Emerald Green */
   --accent-soft: rgba(16, 185, 129, 0.15);
   --glass: rgba(255, 255, 255, 0.7);
@@ -15,18 +11,19 @@
   --burger-width: 25px;
   --burger-height: 2.5px;
   --burger-spacing: 6px;
-  --burger-color: #064e3b; /* Deep Green for text/icons */
+  --burger-color: #064e3b;
   --ease-pendulum: cubic-bezier(0.5, 1.5, 0.5, 1);
 }
 
 body {
   background-color: var(--bg);
-  font-family: 'Poppins', sans-serif;
-  color: #111827; /* Dark Gray for readability */
+  font-family: 'Outfit', sans-serif;
+  color: #111827;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
+
 
 /* Smooth scrolling */
 html {

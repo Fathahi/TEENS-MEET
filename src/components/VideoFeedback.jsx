@@ -60,7 +60,7 @@ const VideoFeedback = () => {
               className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all cursor-pointer"
               onClick={togglePlay}
             >
-              <div className="w-24 h-24 rounded-full bg-emerald-500/90 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 transform group-hover:scale-110 transition-transform duration-500">
+              <div className="w-24 h-24 rounded-full bg-emerald-600-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 transform group-hover:scale-110 transition-transform duration-500">
                 <svg className="w-10 h-10 ml-1" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
@@ -76,7 +76,7 @@ const VideoFeedback = () => {
 
         <div className="mt-12 flex justify-center gap-6 text-emerald-400/60 text-sm font-bold uppercase tracking-widest">
           <span className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
             Real Voices
           </span>
           <span className="flex items-center gap-2">
