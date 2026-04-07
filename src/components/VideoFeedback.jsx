@@ -25,20 +25,21 @@ const VideoFeedback = () => {
       <div className="max-w-5xl mx-auto text-center">
         <div ref={headerRef} className="mb-16 reveal">
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-emerald-400 text-[10px] font-black uppercase tracking-[0.2em] mb-4 border border-white/5 backdrop-blur-sm">
-            Student Feedback
+            Student Voices
           </span>
           <h2 className="text-3xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter">
-            They Thought It'd Be <span className="text-emerald-400 font-black">Boring...</span>
+            What Students Said <span className="text-emerald-400 font-black">After Teens Meet</span>
           </h2>
-          <p className="text-emerald-50/60 max-w-2xl mx-auto text-lg font-medium leading-relaxed italic">
-            "We came in with zero expectations — honestly thought it would be just another camp. But it turned out to be one of the best experiences of our lives."
+          <p className="text-emerald-50/60 max-w-2xl mx-auto text-lg font-medium leading-relaxed">
+            Hear directly from students who attended the previous Teens Meet — their real reactions, honest words, and unforgettable moments.
           </p>
         </div>
 
-        <div 
-          className="reveal active delay-200 relative group rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 bg-black/40 backdrop-blur-sm"
-          style={{ aspectHeight: '56.25%', position: 'relative', overflow: 'hidden', aspectRatio: '16/9' }}
-        >
+        <div className="flex justify-center">
+          <div
+            className="reveal active delay-200 relative group rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 bg-black/40 backdrop-blur-sm w-full max-w-xs md:max-w-sm"
+            style={{ aspectRatio: '9/16' }}
+          >
           {/* Custom Video Player */}
           <video
             ref={videoRef}
@@ -56,11 +57,11 @@ const VideoFeedback = () => {
 
           {/* Custom Play Overlay */}
           {!isPlaying && (
-            <div 
+            <div
               className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all cursor-pointer"
               onClick={togglePlay}
             >
-              <div className="w-24 h-24 rounded-full bg-emerald-600-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 transform group-hover:scale-110 transition-transform duration-500">
+              <div className="w-24 h-24 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xl shadow-emerald-500/40 transform group-hover:scale-110 transition-transform duration-500">
                 <svg className="w-10 h-10 ml-1" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
@@ -72,6 +73,7 @@ const VideoFeedback = () => {
           <div className="absolute bottom-6 right-8 text-white/40 text-xs font-bold tracking-widest uppercase pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
             Student Feedback • Teens Meet 2025
           </div>
+        </div>
         </div>
 
         <div className="mt-12 flex justify-center gap-6 text-emerald-400/60 text-sm font-bold uppercase tracking-widest">

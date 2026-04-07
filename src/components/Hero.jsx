@@ -45,14 +45,16 @@ const Hero = () => {
             <span>Kozhikode District &bull; May 2026</span>
           </div>
 
-          {/* Logo Image as Main Heading */}
-          <div className="flex justify-center mb-10">
-            <img
-              src="/icons/teens-meet-logo-white.png"
-              alt="Teens Meet 2026"
-              className="h-32 md:h-48 lg:h-56 w-auto drop-shadow-2xl"
-            />
-          </div>
+          {/* Main Title */}
+          <h1 className="font-outfit font-black text-7xl md:text-9xl lg:text-[10rem] tracking-tighter leading-none text-white uppercase mb-4 drop-shadow-2xl">
+            TEENS<br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-400">
+              MEET
+            </span>
+          </h1>
+          <p className="text-emerald-300/80 font-outfit font-bold text-xl md:text-2xl tracking-[0.3em] uppercase mb-10">
+            2026
+          </p>
 
           {/* Subheader */}
           <p className="text-lg md:text-xl text-emerald-50/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">

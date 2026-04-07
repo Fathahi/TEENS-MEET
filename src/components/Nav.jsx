@@ -84,7 +84,7 @@ const Nav = () => {
             className="flex items-center gap-2 focus:outline-none"
             aria-label="Go to home section"
           >
-            <img src="/icons/teens-meet-logo-black.png" alt="Teens Meet Logo" className="h-14 w-auto" />
+            <span className="text-2xl font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET</span>
           </a>
           
           {/* Navigation Links - Center */}
@@ -125,7 +125,7 @@ const Nav = () => {
             className="flex items-center gap-2 focus:outline-none"
             aria-label="Go to home section"
           >
-            <img src="/icons/teens-meet-logo-black.png" alt="Teens Meet Logo" className="h-12 w-auto" />
+            <span className="text-xl font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET</span>
           </a>
           
           {/* Mobile Menu Button */}
