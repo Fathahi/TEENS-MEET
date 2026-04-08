@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
 
           {/* Main Title */}
-          <h1 className="font-outfit font-black text-7xl md:text-9xl lg:text-[10rem] tracking-tighter leading-none text-white uppercase mb-4 drop-shadow-2xl">
+          <h1 className="font-outfit font-black text-5xl sm:text-7xl md:text-9xl lg:text-[10rem] tracking-tighter leading-none text-white uppercase mb-4 drop-shadow-2xl">
             TEENS<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-400">
               MEET
@@ -56,32 +56,26 @@ const Hero = () => {
             2026
           </p>
 
-          {/* Subheader */}
-          <p className="text-lg md:text-xl text-emerald-50/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">
-            An exclusive gathering for 10th pass-out students to explore, learn, and lead.
-            Join 600+ peers across 6 locations for a life-changing experience.
-          </p>
-
-          {/* Stats Bar */}
-          <div className="hero-stats flex flex-wrap justify-center gap-8 md:gap-16 mb-16 px-4">
+          {/* Stats Bar - Moved up to avoid covering faces in bg */}
+          <div className="hero-stats flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16 mb-8 px-4">
             <div className="stat text-center">
-              <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
+              <div className="stat-number text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
                 600+
               </div>
               <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
                 Students
               </div>
             </div>
-            <div className="stat text-center border-x border-white/10 px-8 md:px-16">
-              <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
+            <div className="stat text-center border-x-0 sm:border-x border-white/10 px-4 sm:px-8 md:px-16">
+              <div className="stat-number text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
                 100+
               </div>
               <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
                 Guests
               </div>
             </div>
-            <div className="stat text-center border-r border-white/10 pr-8 md:pr-16">
-              <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
+            <div className="stat text-center border-r-0 sm:border-r border-white/10 pr-4 sm:pr-8 md:pr-16">
+              <div className="stat-number text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
                 60+
               </div>
               <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
@@ -89,7 +83,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="stat text-center">
-              <div className="stat-number text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
+              <div className="stat-number text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-2 tracking-tighter font-outfit">
                 06+
               </div>
               <div className="stat-label text-emerald-400 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] opacity-80">
@@ -97,6 +91,12 @@ const Hero = () => {
               </div>
             </div>
           </div>
+
+          {/* Subheader */}
+          <p className="text-lg md:text-xl text-emerald-50/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">
+            An exclusive gathering for 10th pass-out students to explore, learn, and lead.
+            Join 600+ peers across 6 places for a life-changing experience.
+          </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-5 justify-center mt-12">

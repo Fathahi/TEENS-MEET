@@ -15,7 +15,7 @@ const EVENTS = [
       title: 'Exploring Intersections of Science, Technology, Society & Theology - Summer School',
       speakers: ['Dr. Abdussalam Ahmad', 'Dr. Arun Ashokan', 'Dr. Sunandan KN', 'Dr. Sadiq Mampad', 'Dr. Badeeuzzaman', 'Wafa Razak', 'TP Muhammad Shameem'],
       date: '27, 28, 29 May 2025',
-      location: 'Al Jamia Al Islamia Santhapuram',
+      venue: 'Al Jamia Al Islamia Santhapuram',
       duration: '03 Days'
     },
     {
@@ -24,16 +24,16 @@ const EVENTS = [
       title: 'Workshop on Aqeeda, Philosophy and Science: Navigating Technology in the Modern Era',
       speakers: ['Thafasal Ijyas', 'Shuhaib C', 'Shameer Ali Hudawi'],
       date: '03 August 2025',
-      location: 'Unity Centre, Kannur',
+      venue: 'Unity Centre, Kannur',
       duration: '01 Day'
     },
     {
       type: 'Pre Event',
       level: 'All Level',
-      title: 'Science and Technology Fest Declaration Ceremony',
+      title: 'TeensMeet Declaration Ceremony',
       speakers: ['Dr. Syed Mustafa Ali', 'Dr. Nahas Mala', 'Shameer Ali Hudawi', 'T Ismail', 'Adv. Abdul Vahid', 'Sahel Bas'],
       date: '17 August 2025',
-      location: 'Ernakulam Town Hall',
+      venue: 'Ernakulam Town Hall',
       duration: null
     },
     {
@@ -42,7 +42,7 @@ const EVENTS = [
       title: "Let's Ai It! AI Orientation Workshop",
       speakers: ['Amjad Ali EM', 'Ameen Ahsan'],
       date: '24 August 2025',
-      location: 'Kozhikode',
+      venue: 'Kozhikode',
       duration: null
     },
     {
@@ -51,7 +51,7 @@ const EVENTS = [
       title: 'Workshop on Thinking Technology: Exploring Heideggerian Idea of Technology',
       speakers: ['Dr. Muhammed Shareef', 'Dr. Salih Malol'],
       date: '27 September 2025',
-      location: 'Vidyarthi Bhavanam Hall, Kozhikode',
+      venue: 'Vidyarthi Bhavanam Hall, Kozhikode',
       duration: '01 Day'
     },
     {
@@ -60,7 +60,7 @@ const EVENTS = [
       title: 'Hackathon for Social Good',
       speakers: [],
       date: 'September 29 - November 02, 2025',
-      location: 'Online',
+      venue: 'Online',
       duration: '04 Days'
     },
   ]
@@ -342,22 +342,22 @@ export const EventCard = memo(({ event, index }) => {
         {/* Divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-4"></div>
 
-        {/* Date and Location */}
-        <div className="space-y-3 mb-4">
-          <div className="flex items-center gap-2 text-gray-300">
-            <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-            <time dateTime={event.date} className="text-sm font-medium">{event.date}</time>
-          </div>
-          <div className="flex items-center gap-2 text-gray-300">
-            <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
-            <span className="text-sm font-medium">{event.location}</span>
-          </div>
-        </div>
+            {/* Date and Venue */}
+            <div className="space-y-3 mb-4">
+              <div className="flex items-center gap-2 text-gray-300">
+                <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <time dateTime={event.date} className="text-sm font-medium">{event.date}</time>
+              </div>
+              <div className="flex items-center gap-2 text-gray-300">
+                <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span className="text-sm font-medium">{event.venue}</span>
+              </div>
+            </div>
 
         {/* Duration */}
         {event.duration && (

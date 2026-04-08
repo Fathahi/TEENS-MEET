@@ -9,10 +9,10 @@ const FIELD_IDS = {
   name: 'entry.2092238618',
   phone: 'entry.1556369182',
   school: 'entry.479301265',
-  place: 'entry.1753222212'
+  venue: 'entry.1753222212'
 };
 
-const LOCATIONS = [
+const PLACES = [
   'Feroke',
   'City',
   'Kunnamangalam',
@@ -30,7 +30,7 @@ const Registration = () => {
     name: '',
     phone: '',
     school: '',
-    place: '',
+    venue: '',
   })
 
   const handleChange = (e) => {
@@ -46,7 +46,7 @@ const Registration = () => {
     googleFormData.append(FIELD_IDS.name, formData.name);
     googleFormData.append(FIELD_IDS.phone, formData.phone);
     googleFormData.append(FIELD_IDS.school, formData.school);
-    googleFormData.append(FIELD_IDS.place, formData.place);
+    googleFormData.append(FIELD_IDS.venue, formData.venue);
 
     try {
       // no-cors mode is necessary for Google Form POST if you don't have a backend proxy
@@ -70,12 +70,12 @@ const Registration = () => {
         <div ref={headerRef} className="mb-16 reveal text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Join Teens Meet 2026</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            Ready to shape your future? Seats are limited to 100 per location. 
-            Select your preferred location and fill in your details to register.
+            Ready to shape your future? Seats are limited to 100 per place. 
+            Select your preferred place and fill in your details to register.
           </p>
         </div>
 
-        <div ref={formRef} className="reveal delay-[100ms] pro-card p-8 md:p-12 rounded-[2.5rem] bg-white border-emerald-100 shadow-2xl shadow-emerald-500/10">
+        <div ref={formRef} className="reveal delay-[100ms] pro-card p-6 sm:p-8 md:p-12 rounded-[2.5rem] bg-white border-emerald-100 shadow-2xl shadow-emerald-500/10">
           {!isSuccess ? (
             <form onSubmit={handleSubmit} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -122,7 +122,7 @@ const Registration = () => {
                   />
                 </div>
                 <div className="space-y-3">
-                  <label htmlFor="place" className="block text-sm font-bold text-emerald-900 ml-1">Preferred Location</label>
+                  <label htmlFor="place" className="block text-sm font-bold text-emerald-900 ml-1">Preferred Venue</label>
                   <select
                     id="place"
                     name="place"
@@ -131,8 +131,8 @@ const Registration = () => {
                     required
                     className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all appearance-none cursor-pointer"
                   >
-                    <option value="" disabled>Select a location</option>
-                    {LOCATIONS.map(loc => (
+                    <option value="" disabled>Select a place</option>
+                    {PLACES.map(loc => (
                       <option key={loc} value={loc}>{loc}</option>
                     ))}
                   </select>
@@ -159,7 +159,7 @@ const Registration = () => {
               </div>
               <h3 className="text-3xl font-bold text-emerald-900">Registration Successful!</h3>
               <p className="text-gray-600 text-lg">
-                We've received your registration for <strong>{formData.place}</strong>. 
+                We've received your registration for <strong>{formData.venue}</strong>. 
                 Keep an eye on your phone for further updates.
               </p>
               <button

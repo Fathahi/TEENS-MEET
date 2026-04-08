@@ -76,17 +76,17 @@ const Nav = () => {
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden min-[935px]:block fixed top-0 w-full z-[10000] bg-white/80 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Main navigation">
+      <nav className="hidden min-[935px]:block fixed top-0 w-full z-[100000] bg-white/80 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo - Left */}
-          <a 
-            href="#home" 
+          <a
+            href="#home"
             className="flex items-center gap-2 focus:outline-none"
             aria-label="Go to home section"
           >
             <span className="text-2xl font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET</span>
           </a>
-          
+
           {/* Navigation Links - Center */}
           <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-8 items-center text-sm font-semibold text-emerald-900/60">
             {navLinks.map((link) => (
@@ -94,18 +94,17 @@ const Nav = () => {
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`hover:text-emerald-600 transition-colors focus:outline-none px-2 ${
-                  activeSection === link.id ? 'text-emerald-600' : ''
-                }`}
+                className={`hover:text-emerald-600 transition-colors focus:outline-none px-2 ${activeSection === link.id ? 'text-emerald-600' : ''
+                  }`}
                 aria-current={activeSection === link.id ? 'page' : undefined}
               >
                 {link.label}
               </a>
             ))}
           </div>
-          
+
           {/* Register Button - Right */}
-          <a 
+          <a
             href="#register"
             onClick={(e) => handleNavClick(e, 'register')}
             className="btn-primary-white font-bold tracking-wide focus:outline-none shadow-lg shadow-emerald-500/20"
@@ -116,22 +115,22 @@ const Nav = () => {
         </div>
       </nav>
 
-      {/* Mobile Navigation */}
-      <nav className="max-[934px]:block min-[935px]:hidden fixed top-0 w-full z-[10000] bg-white/90 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Mobile navigation">
+      {/* Mobile Navigation Header */}
+      <nav className="max-[934px]:block min-[935px]:hidden fixed top-0 w-full z-[100000] bg-white/90 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Mobile navigation">
         <div className="px-6 h-20 flex items-center justify-between">
           {/* Logo */}
-          <a 
-            href="#home" 
+          <a
+            href="#home"
             className="flex items-center gap-2 focus:outline-none"
             aria-label="Go to home section"
           >
             <span className="text-xl font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET</span>
           </a>
-          
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`burger relative z-[10001] focus:outline-none ${isMenuOpen ? 'active' : ''}`}
+            className={`burger relative z-[100002] focus:outline-none ${isMenuOpen ? 'active' : ''}`}
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen}
           >
@@ -140,48 +139,45 @@ const Nav = () => {
             <span className="bar" />
           </button>
         </div>
-
-        {/* Mobile Menu Overlay */}
-        <div 
-          className={`fixed inset-0 bg-emerald-500/10/20 backdrop-blur-sm transition-opacity duration-300 z-[9999] ${
-            isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-          }`}
-          onClick={() => setIsMenuOpen(false)}
-          aria-hidden="true"
-        />
-
-        {/* Mobile Menu Slide Panel */}
-        <div 
-          className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white backdrop-blur-xl border-l border-emerald-100 shadow-2xl z-[10000] transition-transform duration-300 ease-out ${
-            isMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
-        >
-          <div className="px-8 py-12 flex flex-col gap-6 h-full overflow-y-auto">
-            {/* Navigation Links */}
-            {navLinks.map((link) => (
-              <a
-                key={link.id}
-                href={`#${link.id}`}
-                onClick={(e) => handleNavClick(e, link.id)}
-                className={`text-xl font-bold transition-colors focus:outline-none py-2 ${
-                  activeSection === link.id ? 'text-emerald-600' : 'text-emerald-950 hover:text-emerald-600'
-                }`}
-                aria-current={activeSection === link.id ? 'page' : undefined}
-              >
-                {link.label}
-              </a>
-            ))}
-            <a 
-              href="#register"
-              onClick={(e) => handleNavClick(e, 'register')}
-              className="btn-primary-white font-bold tracking-wide focus:outline-none text-center mt-6 shadow-xl shadow-emerald-500/20"
-              aria-label="Register for Teens Meet 2026"
-            >
-              Register Now
-            </a>
-          </div>
-        </div>
       </nav>
+
+      {/* Mobile Menu Overlay - Move outside nav to prevent clipping */}
+      <div
+        className={`fixed inset-0 bg-emerald-500/10/20 backdrop-blur-sm transition-opacity duration-300 z-[100000] ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`}
+        onClick={() => setIsMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Mobile Menu Slide Panel - Use h-[100dvh] and move outside nav */}
+      <div
+        className={`fixed top-0 right-0 h-[100dvh] w-80 max-w-[85vw] bg-white backdrop-blur-xl border-l border-emerald-100 shadow-2xl z-[100001] transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
+      >
+        <div className="px-8 py-20 flex flex-col gap-6 h-full overflow-y-auto">
+          {/* Navigation Links */}
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              onClick={(e) => handleNavClick(e, link.id)}
+              className={`text-xl font-bold transition-colors focus:outline-none py-2 ${activeSection === link.id ? 'text-emerald-600' : 'text-emerald-950 hover:text-emerald-600'
+                }`}
+              aria-current={activeSection === link.id ? 'page' : undefined}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#register"
+            onClick={(e) => handleNavClick(e, 'register')}
+            className="btn-primary-white font-bold tracking-wide focus:outline-none text-center mt-6 shadow-xl shadow-emerald-500/20"
+            aria-label="Register for Teens Meet 2026"
+          >
+            Register Now
+          </a>
+        </div>
+      </div>
     </>
   )
 }

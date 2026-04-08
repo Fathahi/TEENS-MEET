@@ -56,7 +56,7 @@ const Gallery = () => {
 
     const overlayRelative = { left: currentRect.left - rootRect.left, top: currentRect.top - rootRect.top, width: currentRect.width, height: currentRect.height };
     const animEl = document.createElement('div');
-    animEl.style.cssText = `position:absolute; left:${overlayRelative.left}px; top:${overlayRelative.top}px; width:${overlayRelative.width}px; height:${overlayRelative.height}px; z-index:9999; border-radius:var(--enlarge-radius, 30px); overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.35); transition:all 300ms ease-out; pointer-events:none;`;
+    animEl.style.cssText = `position:absolute; left:${overlayRelative.left}px; top:${overlayRelative.top}px; width:${overlayRelative.width}px; height:${overlayRelative.height}px; z-index:200001; border-radius:var(--enlarge-radius, 30px); overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,.35); transition:all 300ms ease-out; pointer-events:none;`;
 
     const img = overlay.querySelector('img').cloneNode();
     animEl.appendChild(img);
