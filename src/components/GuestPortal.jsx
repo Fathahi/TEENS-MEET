@@ -75,11 +75,11 @@ const GuestCard = ({ guest, index }) => {
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="relative mb-6">
-        <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-emerald-50 shadow-lg group-hover:border-emerald-200 transition-colors duration-500">
+        <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-emerald-50 shadow-xl group-hover:border-emerald-200 transition-colors duration-500">
           <img
             src={guest.image}
             alt={guest.name}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
           />
         </div>
         <div className="absolute -bottom-2 right-0 bg-emerald-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-md border-2 border-white">

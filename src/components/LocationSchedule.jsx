@@ -22,13 +22,14 @@ const LocationSchedule = () => {
         </p>
       </div>
 
-      <div className="overflow-x-auto rounded-3xl border border-emerald-100 shadow-xl shadow-emerald-500/5 bg-white/50 backdrop-blur-md">
+      {/* Desktop View: Table */}
+      <div className="hidden md:block overflow-x-auto rounded-3xl border border-emerald-100 shadow-xl shadow-emerald-500/5 bg-white/50 backdrop-blur-md">
         <table className="w-full text-left border-collapse">
           <thead>
-            <tr className="bg-emerald-600-white">
-              <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Place Name</th>
-              <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Venue</th>
-              <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm">Date</th>
+            <tr className="bg-emerald-500/10">
+              <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm text-emerald-900">Place Name</th>
+              <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm text-emerald-900">Venue</th>
+              <th className="px-6 py-5 font-bold uppercase tracking-wider text-sm text-emerald-900">Date</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-emerald-100">
@@ -39,11 +40,42 @@ const LocationSchedule = () => {
               >
                 <td className="px-6 py-5 font-semibold text-emerald-900 group-hover:text-emerald-600">{place.name}</td>
                 <td className="px-6 py-5 text-gray-700 font-medium italic text-emerald-600/70">{place.venue}</td>
-                <td className="px-6 py-5 text-gray-700">{place.date}</td>
+                <td className="px-6 py-5 text-gray-700 flex items-center gap-2">
+                  <svg className="w-4 h-4 text-emerald-500/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span>{place.date}</span>
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile View: Vertical Cards */}
+      <div className="md:hidden space-y-4">
+        {PLACES.map((place, index) => (
+          <div 
+            key={index}
+            className="p-6 rounded-2xl bg-white border border-emerald-100 shadow-lg shadow-emerald-500/5"
+          >
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-xl font-bold text-emerald-950">{place.name}</h3>
+              <span className="flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-emerald-500 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-100">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                {place.date}
+              </span>
+            </div>
+            <div className="flex items-center gap-2 text-emerald-900/60 font-medium italic">
+              <svg className="w-4 h-4 text-emerald-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              </svg>
+              <span className="text-sm truncate">{place.venue}</span>
+            </div>
+          </div>
+        ))}
       </div>
       
       <div className="mt-12 text-center">

@@ -26,8 +26,9 @@ const Footer = () => {
                   <li><a href="#schedule" className="hover:text-emerald-400 transition-all font-medium">Schedule</a></li>
                 </ul>
                 <ul className="space-y-4 text-emerald-50/60">
-                  <li><a href="#sessions" className="hover:text-emerald-400 transition-all font-medium">Sessions</a></li>
                   <li><a href="#register" className="hover:text-emerald-400 transition-all font-medium">Register</a></li>
+                  <li><a href="#invite" className="hover:text-emerald-400 transition-all font-medium">Invite</a></li>
+                  <li><a href="#sio" className="hover:text-emerald-400 transition-all font-medium">Organizers</a></li>
                 </ul>
               </div>
             </div>
@@ -42,8 +43,8 @@ const Footer = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                   </svg>
                   <p className="font-medium">
-                    Vidyarthi Bhavanam, UK Sankunni Rd,<br />
-                    near KSRTC, Kozhikode, Kerala 673001
+                    Calicut House, Near District Co-operative Hospital,<br />
+                    Eranhipalam, Calicut, Kerala India
                   </p>
                 </div>
               </div>
@@ -104,7 +105,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-2xl bg-emerald-600-white transition-all duration-300 shadow-lg shadow-black/20"
+                  className="w-12 h-12 flex items-center justify-center rounded-2xl bg-emerald-400/10 hover:bg-emerald-400/20 border border-emerald-400/20 transition-all duration-300 shadow-lg shadow-black/20"
                   aria-label={social.name}
                 >
                   <span className="sr-only">{social.name}</span>

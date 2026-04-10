@@ -3,7 +3,7 @@ import { smoothScrollTo } from '../utils/smoothScroll'
 import { getImagePath } from '../utils/imagePath'
 import GradualBlur from './GradualBlur'
 
-const SECTIONS = ['home', 'about', 'schedule', 'guests', 'sessions', 'register']
+const SECTIONS = ['home', 'about', 'schedule', 'guests', 'register', 'invite', 'sio']
 const SCROLL_OFFSET = 100
 
 const Nav = () => {
@@ -69,32 +69,34 @@ const Nav = () => {
     { id: 'about', label: 'About' },
     { id: 'schedule', label: 'Schedule' },
     { id: 'guests', label: 'Guests' },
-    { id: 'sessions', label: 'Sessions' },
     { id: 'register', label: 'Register' },
+    { id: 'invite', label: 'Invite' },
+    { id: 'sio', label: 'Organizers' },
   ], [])
 
   return (
     <>
       {/* Desktop Navigation */}
-      <nav className="hidden min-[935px]:block fixed top-0 w-full z-[100000] bg-white/80 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Main navigation">
+      <nav className="hidden lg:block fixed top-0 w-full z-[100000] bg-white/80 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Main navigation">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo - Left */}
           <a
             href="#home"
-            className="flex items-center gap-2 focus:outline-none"
+            className="flex flex-col focus:outline-none leading-none"
             aria-label="Go to home section"
           >
-            <span className="text-2xl font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET</span>
+            <span className="text-2xl font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET </span>
+            <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-[0.2em] mt-0.5"></span>
           </a>
 
-          {/* Navigation Links - Center */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 flex gap-8 items-center text-sm font-semibold text-emerald-900/60">
+          {/* Navigation Links - Center (Flex grow to handle space) */}
+          <div className="flex-1 hidden min-[1100px]:flex justify-center gap-6 items-center text-[13px] font-semibold text-emerald-900/70">
             {navLinks.map((link) => (
               <a
                 key={link.id}
                 href={`#${link.id}`}
                 onClick={(e) => handleNavClick(e, link.id)}
-                className={`hover:text-emerald-600 transition-colors focus:outline-none px-2 ${activeSection === link.id ? 'text-emerald-600' : ''
+                className={`hover:text-emerald-600 transition-colors focus:outline-none px-1 whitespace-nowrap ${activeSection === link.id ? 'text-emerald-600' : ''
                   }`}
                 aria-current={activeSection === link.id ? 'page' : undefined}
               >
@@ -103,41 +105,85 @@ const Nav = () => {
             ))}
           </div>
 
-          {/* Register Button - Right */}
-          <a
-            href="#register"
-            onClick={(e) => handleNavClick(e, 'register')}
-            className="btn-primary-white font-bold tracking-wide focus:outline-none shadow-lg shadow-emerald-500/20"
-            aria-label="Register for Teens Meet 2026"
-          >
-            Register Now
-          </a>
+          {/* Navigation Links - Reduced display for mid-size screens */}
+          <div className="flex-1 flex min-[1100px]:hidden justify-center gap-4 items-center text-[12px] font-semibold text-emerald-900/60">
+             {navLinks.slice(0, 4).map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                onClick={(e) => handleNavClick(e, link.id)}
+                className={`hover:text-emerald-600 transition-colors focus:outline-none whitespace-nowrap ${activeSection === link.id ? 'text-emerald-600' : ''
+                  }`}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          {/* CTA Buttons - Right */}
+          <div className="flex items-center gap-4">
+            <a
+              href="#invite"
+              onClick={(e) => handleNavClick(e, 'invite')}
+              className="hidden min-[1100px]:flex h-11 items-center px-6 rounded-xl border-2 border-emerald-400/20 text-emerald-600 font-bold text-sm hover:bg-emerald-50 transition-all focus:outline-none"
+              aria-label="Invite friends to Teens Meet 2026"
+            >
+              Invite Friends
+            </a>
+            <a
+              href="#register"
+              onClick={(e) => handleNavClick(e, 'register')}
+              className="btn-primary h-11 flex items-center px-8 rounded-xl font-bold tracking-wide focus:outline-none shadow-lg shadow-emerald-500/20"
+              aria-label="Register for Teens Meet 2026"
+            >
+              Register Now
+            </a>
+          </div>
         </div>
       </nav>
 
-      {/* Mobile Navigation Header */}
-      <nav className="max-[934px]:block min-[935px]:hidden fixed top-0 w-full z-[100000] bg-white/90 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Mobile navigation">
-        <div className="px-6 h-20 flex items-center justify-between">
+      {/* Mobile Navigation Header - Visible by default, hidden on large screens */}
+      <nav className="lg:hidden fixed top-0 w-full z-[100000] bg-white/90 backdrop-blur-md border-b border-emerald-100" role="navigation" aria-label="Mobile navigation">
+        <div className="px-6 h-16 flex items-center justify-between">
           {/* Logo */}
           <a
             href="#home"
-            className="flex items-center gap-2 focus:outline-none"
+            className="flex flex-col focus:outline-none leading-none"
             aria-label="Go to home section"
           >
-            <span className="text-xl font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET</span>
+            <span className="text-lg font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET
+
+            </span>
           </a>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`burger relative z-[100002] focus:outline-none ${isMenuOpen ? 'active' : ''}`}
-            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isMenuOpen}
-          >
-            <span className="bar" />
-            <span className="bar" />
-            <span className="bar" />
-          </button>
+          {/* Mobile Action Buttons */}
+          <div className="flex items-center gap-2">
+            <a
+              href="#register"
+              onClick={(e) => handleNavClick(e, 'register')}
+              className="px-3 py-1.5 rounded-lg bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-wider shadow-sm"
+            >
+              Register
+            </a>
+            <a
+              href="#invite"
+              onClick={(e) => handleNavClick(e, 'invite')}
+              className="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-wider border border-emerald-100"
+            >
+              Invite
+            </a>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`burger ml-2 relative z-[100002] focus:outline-none ${isMenuOpen ? 'active' : ''}`}
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
+            >
+              <span className="bar" />
+              <span className="bar" />
+              <span className="bar" />
+            </button>
+          </div>
         </div>
       </nav>
 

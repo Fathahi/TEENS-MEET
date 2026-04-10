@@ -18,6 +18,12 @@ const Sessions = () => {
 
   const sessions = useMemo(() => [
     {
+      title: 'Islamic Identity',
+      description: 'Balancing faith and modern education. Staying grounded in your values while excelling in a rapidly changing world.',
+      tag: 'Identity',
+      gradient: 'from-emerald-600 to-teal-700',
+    },
+    {
       title: 'The Art of Career Selection',
       description: 'Beyond the usual Engineering and Medicine. Explore emerging fields and find where your passion meets the world\'s needs.',
       tag: 'Career',
@@ -34,12 +40,6 @@ const Sessions = () => {
       description: 'Building resilience for college life. Practical tools for managing stress and maintaining mental health in a competitive world.',
       tag: 'Wellness',
       gradient: 'from-green-500 to-emerald-600',
-    },
-    {
-      title: 'Islamic Identity',
-      description: 'Balancing faith and modern education. Staying grounded in your values while excelling in a rapidly changing world.',
-      tag: 'Identity',
-      gradient: 'from-emerald-600 to-teal-700',
     },
   ], [])
 

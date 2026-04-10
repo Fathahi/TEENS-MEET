@@ -331,14 +331,14 @@ const Gallery = () => {
       <section id="gallery" className="relative bg-emerald-950 pt-24 pb-8 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10 pointer-events-none mb-12">
           <div ref={headerRef} className="text-center reveal">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-600-white text-[10px] font-bold uppercase tracking-[0.2em] mb-4 border border-white/5 backdrop-blur-sm">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-400/10 text-emerald-300 text-[10px] font-bold uppercase tracking-[0.2em] mb-4 border border-emerald-400/20 backdrop-blur-sm">
               Gallery
             </span>
             <h2 className="text-4xl md:text-6xl font-outfit font-black mb-6 text-white uppercase tracking-tighter">
               Glimpses from <span className="text-emerald-400">Previous Events</span>
             </h2>
             <p className="text-emerald-50/60 max-w-2xl mx-auto text-lg font-medium leading-relaxed font-inter">
-              Join 600+ motivated students from across Kozhikode. 
+              Register with 600+ motivated students from across Kozhikode. 
               Experience the energy, inspiration, and community that define Teens Meet.
             </p>
             <p className="text-emerald-400/50 text-xs mt-3 font-semibold tracking-widest uppercase">

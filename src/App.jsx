@@ -8,7 +8,9 @@ const Gallery = lazy(() => import('./components/Gallery'))
 const LocationSchedule = lazy(() => import('./components/LocationSchedule'))
 const GuestPortal = lazy(() => import('./components/GuestPortal'))
 const VideoFeedback = lazy(() => import('./components/VideoFeedback'))
-const Sessions = lazy(() => import('./components/Speakers')) // Repurposed Speakers
+// const Sessions = lazy(() => import('./components/Speakers')) // Repurposed Speakers (Removed as requested)
+const SIOIntro = lazy(() => import('./components/SIOIntro'))
+const ReferralPortal = lazy(() => import('./components/ReferralPortal'))
 const Registration = lazy(() => import('./components/Registration'))
 const Footer = lazy(() => import('./components/Footer'))
 
@@ -24,12 +26,13 @@ function App() {
         <Hero />
         <Suspense fallback={<div className="min-h-screen" />}>
           <About />
-          <Gallery />
           <LocationSchedule />
           <GuestPortal />
+          <Gallery />
           <VideoFeedback />
-          <Sessions />
           <Registration />
+          <ReferralPortal />
+          <SIOIntro />
         </Suspense>
       </main>
       <Suspense fallback={null}>

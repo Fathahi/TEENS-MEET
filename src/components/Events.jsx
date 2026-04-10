@@ -51,7 +51,7 @@ const EVENTS = [
       title: 'Workshop on Thinking Technology: Exploring Heideggerian Idea of Technology',
       speakers: ['Dr. Muhammed Shareef', 'Dr. Salih Malol'],
       date: '27 September 2025',
-      venue: 'Vidyarthi Bhavanam Hall, Kozhikode',
+      venue: 'Calicut House, Calicut',
       duration: '01 Day'
     },
     {
@@ -187,9 +187,9 @@ const Events = () => {
           <button
             key={filter}
             onClick={() => setActiveFilter(filter)}
-            className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-[#03030a] ${
+            className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-[#03030a] ${
               activeFilter === filter
-                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-lg shadow-indigo-500/40 scale-105'
+                ? 'bg-gradient-to-r from-emerald-600 to-emerald-400 text-white shadow-lg shadow-emerald-500/40 scale-105'
                 : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white hover:scale-105 border border-white/10 backdrop-blur-sm'
             }`}
             aria-pressed={activeFilter === filter}
@@ -288,20 +288,20 @@ export const EventCard = memo(({ event, index }) => {
   const isHackathon = event.title === 'Hackathon for Social Good'
 
   return (
-    <div className="pro-card rounded-2xl overflow-hidden group hover:border-indigo-500/40 active:border-indigo-500/60 active:scale-[0.98] touch-manipulation h-full flex flex-col select-none transition-all duration-200">
+    <div className="pro-card rounded-2xl overflow-hidden group hover:border-emerald-500/40 active:border-emerald-500/60 active:scale-[0.98] touch-manipulation h-full flex flex-col select-none transition-all duration-200">
       {/* Header with Gradient */}
-      <div className="event-card-header relative px-6 py-6 bg-gradient-to-br from-indigo-600/25 via-purple-600/20 to-transparent border-b border-white/10">
+      <div className="event-card-header relative px-6 py-6 bg-gradient-to-br from-emerald-600/25 via-emerald-400/20 to-transparent border-b border-white/10">
         {/* Wavy Pattern Background */}
         <div className="absolute inset-0 opacity-20">
           <svg className="w-full h-full" viewBox="0 0 400 150" preserveAspectRatio="none">
             <defs>
               <linearGradient id={`wave1-${uniqueId}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#818cf8" stopOpacity="0.3" />
-                <stop offset="100%" stopColor="#a78bfa" stopOpacity="0.1" />
+                <stop offset="0%" stopColor="#34d399" stopOpacity="0.3" />
+                <stop offset="100%" stopColor="#6ee7b7" stopOpacity="0.1" />
               </linearGradient>
               <linearGradient id={`wave2-${uniqueId}`} x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#6366f1" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#818cf8" stopOpacity="0.05" />
+                <stop offset="0%" stopColor="#10b981" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#34d399" stopOpacity="0.05" />
               </linearGradient>
             </defs>
             <path d="M0,60 Q50,30 100,60 T200,60 T300,60 T400,60 L400,0 L0,0 Z" fill={`url(#wave1-${uniqueId})`}/>
@@ -312,7 +312,7 @@ export const EventCard = memo(({ event, index }) => {
         
         {/* Badges */}
         <div className="relative flex justify-between items-start mb-4">
-          <span className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-bold border border-indigo-500/30 backdrop-blur-sm">
+          <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30 backdrop-blur-sm">
             {event.type}
           </span>
           <span className="px-3 py-1 rounded-full bg-white/5 text-gray-300 text-xs font-bold border border-white/10 backdrop-blur-sm">
@@ -345,13 +345,13 @@ export const EventCard = memo(({ event, index }) => {
             {/* Date and Venue */}
             <div className="space-y-3 mb-4">
               <div className="flex items-center gap-2 text-gray-300">
-                <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 <time dateTime={event.date} className="text-sm font-medium">{event.date}</time>
               </div>
               <div className="flex items-center gap-2 text-gray-300">
-                <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                 </svg>
@@ -363,7 +363,7 @@ export const EventCard = memo(({ event, index }) => {
         {event.duration && (
           <>
             <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-3"></div>
-            <p className="text-indigo-300 font-bold text-sm">{event.duration}</p>
+            <p className="text-emerald-300 font-bold text-sm">{event.duration}</p>
           </>
         )}
 
@@ -375,7 +375,7 @@ export const EventCard = memo(({ event, index }) => {
               href="https://teensmeet.siokerala.org/hackathon" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="w-full px-4 py-2.5 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-semibold text-sm text-center hover:from-indigo-500 hover:to-purple-500 active:from-indigo-700 active:to-purple-700 active:scale-95 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-indigo-500/40 flex items-center justify-center gap-2 touch-manipulation min-h-[44px]"
+              className="w-full px-4 py-2.5 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-400 text-white font-semibold text-sm text-center hover:from-emerald-500 hover:to-emerald-400 active:from-emerald-700 active:to-emerald-500 active:scale-95 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/40 flex items-center justify-center gap-2 touch-manipulation min-h-[44px]"
             >
               View Hackathon Details
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -7,7 +7,7 @@ const Stats = () => {
   const stats = [
     { value: '2,000+', label: 'Delegates' },
     { value: '50+', label: 'Guests' },
-    { value: '20+', label: 'Sessions' },
+    { value: '20+', label: 'Programs' },
     { value: '05+', label: 'Stages' },
   ]
 
