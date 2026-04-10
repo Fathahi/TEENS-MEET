@@ -98,28 +98,25 @@ const Hero = () => {
             Register with 600+ peers for a life-changing experience.
           </p>
 
-          {/* CTAs - Optimized Horizontal Layout for mobile-first space saving */}
+          {/* CTAs - Optimized Horizontal Layout: [Schedule] [Register] [Invite] */}
           <div className="flex flex-row flex-nowrap justify-center gap-1.5 md:gap-5 mt-6 md:mt-12">
+            <a
+              href="#schedule"
+              className="px-2 md:px-8 py-2.5 md:py-5 rounded-lg md:rounded-2xl border-2 border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/40 transition-all text-[9px] md:text-lg font-bold text-white/80 hover:-translate-y-1 active:scale-95 text-center flex-1"
+            >
+              View Schedule
+            </a>
             <a
               href="#register"
               className="px-2 md:px-12 py-2.5 md:py-5 rounded-lg md:rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-white font-bold text-[9px] md:text-lg transition-all duration-300 shadow-xl md:shadow-2xl shadow-emerald-500/20 md:shadow-emerald-500/30 hover:-translate-y-1 active:scale-95 text-center flex-1"
             >
-              <span className="sm:hidden">Register</span>
-              <span className="hidden sm:inline">Register Now</span>
+              Register Now
             </a>
             <a
               href="#invite"
               className="px-2 md:px-12 py-2.5 md:py-5 rounded-lg md:rounded-2xl border-2 border-emerald-400/50 bg-emerald-500/10 backdrop-blur-md hover:bg-emerald-500/20 hover:border-emerald-400 transition-all text-[9px] md:text-lg font-bold text-emerald-50 shadow-lg md:shadow-xl hover:-translate-y-1 active:scale-95 text-center flex-1"
             >
-              <span className="sm:hidden">Invite</span>
-              <span className="hidden sm:inline">Invite Friends</span>
-            </a>
-            <a
-              href="#schedule"
-              className="px-2 md:px-8 py-2.5 md:py-5 rounded-lg md:rounded-2xl border-2 border-white/20 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-white/40 transition-all text-[9px] md:text-lg font-bold text-white/80 hover:-translate-y-1 active:scale-95 text-center flex-1"
-            >
-              <span className="sm:hidden">Schedule</span>
-              <span className="hidden sm:inline">View Schedule</span>
+              Invite Friends
             </a>
           </div>
         </motion.div>
