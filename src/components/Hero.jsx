@@ -7,7 +7,7 @@ const Hero = () => {
   const bgImage = '/main/teensmeet.png'
 
   return (
-    <header id="home" className="relative min-h-screen flex items-end justify-center overflow-hidden pb-10 md:pb-16">
+    <header id="home" className="relative min-h-screen flex items-end justify-center overflow-hidden pb-10 md:pb-16 mt-[1cm]">
       {/* Background Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0">
         <motion.div
