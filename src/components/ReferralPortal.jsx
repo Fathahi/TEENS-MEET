@@ -63,7 +63,17 @@ const ReferralPortal = () => {
 
   const handleShare = () => {
     if (!userData) return
-    const message = `Register for TEENS MEET 🚀\nUse my referral code: ${userData.referralCode}\nRegister here: ${referralLink}`;
+    const message = `\u200Eالسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ ✨\n\n` +
+      `I'm excited to invite you to *TEENS MEET 2026* – a special gathering for 10th-grade graduates to connect, grow, and build a strong future on the foundation of Islamic values! 🎓🌙\n\n` +
+      `*What to expect?* 🌟\n\n` +
+      `- Inspiring Mentorship\n\n` +
+      `- Academic & Life Guidance\n\n` +
+      `- Good Company (Suhbah)\n\n` +
+      `- Building Islamic Identity & Character\n\n` +
+      `Join me on this meaningful journey, In Sha Allah! 🚀\n\n` +
+      `${referralLink}\n\n` +
+      `My Referral Code: *${userData.referralCode}*\n\n` +
+      `Hope to see you there! 👋✨`;
     const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }
@@ -139,7 +149,7 @@ const ReferralPortal = () => {
               <div className="pt-4 flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={handleShare}
-                  className="flex-1 btn-primary py-4 rounded-xl flex items-center justify-center gap-3 font-bold"
+                  className="flex-1 py-4 rounded-xl flex items-center justify-center gap-3 font-bold bg-[#25D366] hover:bg-[#128C7E] text-white shadow-xl shadow-green-500/20 hover:-translate-y-1 active:scale-95 transition-all duration-300"
                 >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.539 2.016 2.126-.54c1.029.563 2.025.914 3.162.915 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.586-5.766-5.768-5.766zm3.29 8.12c-.144.405-.838.774-1.149.822-.309.048-.61.063-1.013-.067-.24-.077-.542-.165-1.01-.358-1.992-.83-3.272-2.834-3.371-2.969-.099-.136-.736-.937-.736-1.78s.434-1.26.588-1.428c.154-.167.336-.21.448-.21s.224.013.322.018c.101.006.237-.038.371.285.14.336.475 1.156.516 1.24.041.085.068.184.01.299-.056.115-.111.189-.221.312-.112.126-.236.281-.336.377-.113.109-.23.23-.099.44.13.224.58 1.002.94 1.341.464.436.858.572 1.076.666s.416.036.568-.139c.15-.175.643-.746.815-.999.172-.255.344-.213.58-.126.236.087 1.493.704 1.751.833s.43.19.493.3c.062.11.062.636-.082 1.041z" />
