@@ -11,17 +11,53 @@ const FIELD_IDS = {
   name: 'entry.2092238618',
   phone: 'entry.1556369182',
   school: 'entry.479301265',
-  venue: 'entry.1753222212',
+  venue: 'entry.1753222212', // Region
+  place: 'entry.133447066',  // New
   referredBy: 'entry.873073433'
 };
 
 const PLACES = [
-  'Feroke',
-  'City',
-  'Kunnamangalam',
-  'Mukkam',
+  'Ayancheri', 'Balussery', 'Changaroth', 'Chelannur', 'City', 'Feroke', 
+  'Kakkodi', 'Kodiyathur', 'Koduvally', 'Koyilandy', 'Kunnamangalam', 
+  'Kuttuyadi', 'Medical College', 'Meppayyur', 'Mukkam', 'Nadapuram', 
+  'NIT', 'Omassery', 'Payyoli', 'Perambra', 'Thamarassery', 'Thiruvambady', 
+  'Ullyeri', 'Vadakara'
+];
+
+const PLACE_TO_REGION = {
+  'Kuttuyadi': 'Kuttuyadi',
+  'Nadapuram': 'Kuttuyadi',
+  'Ayancheri': 'Kuttuyadi',
+  'Changaroth': 'Kuttuyadi',
+  'Vadakara': 'Meppayyur',
+  'Perambra': 'Meppayyur',
+  'Meppayyur': 'Meppayyur',
+  'Payyoli': 'Meppayyur',
+  'Ullyeri': 'Meppayyur',
+  'Balussery': 'Balussery',
+  'Koyilandy': 'Balussery',
+  'Chelannur': 'Balussery',
+  'Kakkodi': 'Balussery',
+  'Medical College': 'City',
+  'City': 'City',
+  'Feroke': 'City',
+  'Mukkam': 'Mukkam',
+  'NIT': 'Mukkam',
+  'Kunnamangalam': 'Mukkam',
+  'Kodiyathur': 'Mukkam',
+  'Omassery': 'Koduvally',
+  'Koduvally': 'Koduvally',
+  'Thiruvambady': 'Koduvally',
+  'Thamarassery': 'Koduvally',
+};
+
+const REGIONS = [
+  'Balussery',
+  'Kuttuyadi',
   'Meppayyur',
-  'Vadakara',
+  'Mukkam',
+  'City',
+  'Koduvally',
 ];
 
 const Registration = () => {
@@ -34,6 +70,7 @@ const Registration = () => {
     name: '',
     phone: '',
     school: '',
+    place: '',
     venue: '',
     referredBy: ''
   })
@@ -46,7 +83,37 @@ const Registration = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+    
+    setFormData(prev => {
+      const newData = { ...prev, [name]: value };
+      
+      // Auto-select Region (venue) when Place changes
+      if (name === 'place' && PLACE_TO_REGION[value]) {
+        newData.venue = PLACE_TO_REGION[value];
+      }
+      
+      return newData;
+    });
+  }
+
+  const submitToGoogleForm = async (data) => {
+    try {
+      const gFormData = new FormData();
+      gFormData.append(FIELD_IDS.name, data.name);
+      gFormData.append(FIELD_IDS.phone, data.phone);
+      gFormData.append(FIELD_IDS.school, data.school);
+      gFormData.append(FIELD_IDS.place, data.place);
+      gFormData.append(FIELD_IDS.venue, data.venue);
+      gFormData.append(FIELD_IDS.referredBy, data.referredBy);
+
+      await fetch(GOOGLE_FORM_ACTION, {
+        method: "POST",
+        mode: "no-cors",
+        body: gFormData
+      });
+    } catch (error) {
+      console.error('Google Form submission error:', error);
+    }
   }
 
   const handleSubmit = async (e) => {
@@ -80,11 +147,15 @@ const Registration = () => {
           full_name: formData.name,
           phone: formData.phone,
           school: formData.school,
+          Place: formData.place,
           venue: formData.venue,
           referred_by: formData.referredBy || null
         }]);
 
       if (insertError) throw insertError;
+
+      // 3. Submit to Google Form
+      await submitToGoogleForm(formData);
 
       setIsSuccess(true);
     } catch (error) {
@@ -96,13 +167,13 @@ const Registration = () => {
   }
 
   return (
-    <section id="register" className="py-24 px-6 bg-emerald-50/30">
+    <section id="register" className="pt-24 pb-8 px-6 bg-emerald-50/30">
       <div className="max-w-4xl mx-auto">
         <div ref={headerRef} className="mb-16 reveal text-center">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Register for Teens Meet 2026</h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-            Ready to shape your future? Seats are limited to 100 per place.
-            Select your preferred place and fill in your details to register.
+            Ready to shape your future? Seats are limited to 100 per region. 
+            <span className="block mt-1 font-bold text-emerald-600">Registration Fee: ₹1000</span>
           </p>
         </div>
 
@@ -153,7 +224,26 @@ const Registration = () => {
                   />
                 </div>
                 <div className="space-y-3">
-                  <label htmlFor="place" className="block text-sm font-bold text-emerald-900 ml-1">Preferred Venue</label>
+                  <label htmlFor="place" className="block text-sm font-bold text-emerald-900 ml-1">Place</label>
+                  <select
+                    id="place"
+                    name="place"
+                    value={formData.place}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled>Select a place</option>
+                    {PLACES.map(loc => (
+                      <option key={loc} value={loc}>{loc}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label htmlFor="venue" className="block text-sm font-bold text-emerald-900 ml-1">Preferred Region</label>
                   <select
                     id="venue"
                     name="venue"
@@ -162,25 +252,24 @@ const Registration = () => {
                     required
                     className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all appearance-none cursor-pointer"
                   >
-                    <option value="" disabled>Select a venue</option>
-                    {PLACES.map(loc => (
+                    <option value="" disabled>Select a region</option>
+                    {REGIONS.map(loc => (
                       <option key={loc} value={loc}>{loc}</option>
                     ))}
                   </select>
                 </div>
-              </div>
-
-              <div className="space-y-3">
-                <label htmlFor="referredBy" className="block text-sm font-bold text-emerald-900 ml-1">Referral Code (Optional)</label>
-                <input
-                  type="text"
-                  id="referredBy"
-                  name="referredBy"
-                  value={formData.referredBy}
-                  onChange={handleChange}
-                  placeholder="Enter referral code if you have one"
-                  className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
-                />
+                <div className="space-y-3">
+                  <label htmlFor="referredBy" className="block text-sm font-bold text-emerald-900 ml-1">Referral Code (Optional)</label>
+                  <input
+                    type="text"
+                    id="referredBy"
+                    name="referredBy"
+                    value={formData.referredBy}
+                    onChange={handleChange}
+                    placeholder="Enter referral code if you have one"
+                    className="w-full px-6 py-4 rounded-xl border border-emerald-100 bg-emerald-50/30 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                  />
+                </div>
               </div>
 
 

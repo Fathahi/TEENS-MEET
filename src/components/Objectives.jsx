@@ -44,7 +44,7 @@ const About = () => {
         </svg>
       ),
       title: 'Networking',
-      description: 'Connect with 600+ motivated peers from different places, building a community of future leaders.',
+      description: 'Connect with 600+ motivated peers from different regions, building a community of future leaders.',
       color: 'emerald_light'
     },
   ]

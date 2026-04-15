@@ -85,7 +85,7 @@ const Nav = () => {
             className="flex flex-col focus:outline-none leading-none"
             aria-label="Go to home section"
           >
-            <span className="text-2xl font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET </span>
+            <span className="text-2xl font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET</span>
             <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-[0.2em] mt-0.5"></span>
           </a>
 
@@ -125,10 +125,13 @@ const Nav = () => {
             <a
               href="#invite"
               onClick={(e) => handleNavClick(e, 'invite')}
-              className="hidden min-[1100px]:flex h-11 items-center px-6 rounded-xl border-2 border-emerald-400/20 text-emerald-600 font-bold text-sm hover:bg-emerald-50 transition-all focus:outline-none"
+              className="hidden min-[1100px]:flex relative h-11 items-center px-6 rounded-xl border-2 border-emerald-400/20 text-emerald-600 font-bold text-sm hover:bg-emerald-50 transition-all focus:outline-none group"
               aria-label="Invite friends to Teens Meet 2026"
             >
               Invite Friends
+              <div className="absolute -top-2 -right-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-[8px] font-black px-2 py-0.5 rounded-full shadow-md animate-bounce">
+                Win! 🎁
+              </div>
             </a>
             <a
               href="#register"
@@ -151,9 +154,7 @@ const Nav = () => {
             className="flex flex-col focus:outline-none leading-none"
             aria-label="Go to home section"
           >
-            <span className="text-lg font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET
-
-            </span>
+            <span className="text-lg font-display font-black text-emerald-600 tracking-tighter uppercase">TEENS MEET</span>
           </a>
 
           {/* Mobile Action Buttons */}
@@ -168,9 +169,12 @@ const Nav = () => {
             <a
               href="#invite"
               onClick={(e) => handleNavClick(e, 'invite')}
-              className="px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-wider border border-emerald-100"
+              className="relative px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-wider border border-emerald-100"
             >
               Invite
+              <div className="absolute -top-2 -right-1.5 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-[6px] font-black px-1.5 py-0.5 rounded-full shadow-sm animate-pulse">
+                Win!
+              </div>
             </a>
             {/* Mobile Menu Button */}
             <button

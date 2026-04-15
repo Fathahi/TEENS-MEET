@@ -79,25 +79,25 @@ const ReferralPortal = () => {
   }
 
   return (
-    <section id="invite" className="py-24 px-6 relative overflow-hidden bg-gradient-to-b from-white via-emerald-50/30 to-white">
+    <section id="invite" className="pt-8 pb-24 px-6 relative overflow-hidden bg-gradient-to-b from-white via-emerald-50/30 to-white">
       {/* Decorative background elements for more "color" */}
       <div className="absolute top-0 left-1/4 w-64 h-64 bg-emerald-200/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-200/10 rounded-full blur-3xl -z-10 animate-pulse delay-1000"></div>
       <div className="max-w-4xl mx-auto">
-          <div ref={portalRef} className="reveal pro-card p-8 md:p-12 rounded-[2.5rem] border-emerald-200 shadow-2xl shadow-emerald-500/10 relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-transparent pointer-events-none"></div>
-            
-            <div className="relative text-center mb-10">
-              <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-lg shadow-emerald-500/20 animate-bounce">
-                <span className="flex h-2 w-2 rounded-full bg-white animate-ping"></span>
+        <div ref={portalRef} className="reveal pro-card p-8 md:p-12 rounded-[2.5rem] border-emerald-200 shadow-2xl shadow-emerald-500/10 relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-transparent pointer-events-none"></div>
+
+          <div className="text-center mb-10">
+            <div className="inline-block px-8 py-3 rounded-2xl bg-emerald-500 text-white shadow-xl shadow-emerald-500/20 animate-bounce mb-6">
+              <span className="text-xl md:text-3xl font-black uppercase tracking-wider flex items-center gap-3">
                 Big Rewards Await! 🎁
-              </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-center w-full">
-              <span className="gradient-text">Unlock the Prizes!</span> <span>🚀</span>
+              </span>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">
+              <span className="gradient-text">Win Earbuds!</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-              Bring your friends along— <span className="text-emerald-600 font-bold italic">Top referrers win exclusive prizes!</span> 🎁. 
-              Enter your registered mobile number to start your streak.
+              Bring your friends along! The <span className="text-emerald-600 font-bold italic">Top 3 Referral Heroes</span> who bring the most friends will win premium earbuds! 🎁
             </p>
           </div>
 
@@ -130,7 +130,7 @@ const ReferralPortal = () => {
                   <p className="text-4xl font-black text-emerald-900 tracking-widest">{userData.referralCode}</p>
                 </div>
                 <div className="p-6 rounded-2xl bg-emerald-50 border border-emerald-100 text-center">
-                  <p className="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-2">Total Referrals</p>
+                  <p className="text-sm font-bold text-emerald-600 uppercase tracking-wider mb-2">Students Registered via Your Referral</p>
                   <p className="text-4xl font-black text-emerald-900">{userData.referralCount}</p>
                 </div>
               </div>

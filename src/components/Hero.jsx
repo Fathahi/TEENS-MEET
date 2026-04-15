@@ -87,15 +87,14 @@ const Hero = () => {
                 6
               </div>
               <div className="stat-label text-emerald-400 text-[9px] md:text-xs font-black uppercase tracking-[0.15em] opacity-80">
-                Places
+                Regions
               </div>
             </div>
           </div>
 
           {/* Subheader */}
           <p className="text-lg md:text-xl text-emerald-50/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">
-            A program for 10th-grade graduates combining Islamic values with academic and life guidance. 
-            Register with 600+ peers for a life-changing experience.
+            A program for 10th-grade graduates combining Islamic values with academic guidance. 
           </p>
 
           {/* CTAs - Optimized Horizontal Layout: [Schedule] [Register] [Invite] */}
@@ -114,9 +113,13 @@ const Hero = () => {
             </a>
             <a
               href="#invite"
-              className="px-2 md:px-12 py-2.5 md:py-5 rounded-lg md:rounded-2xl border-2 border-emerald-400/50 bg-emerald-500/10 backdrop-blur-md hover:bg-emerald-500/20 hover:border-emerald-400 transition-all text-[9px] md:text-lg font-bold text-emerald-50 shadow-lg md:shadow-xl hover:-translate-y-1 active:scale-95 text-center flex-1"
+              className="relative px-2 md:px-12 py-2.5 md:py-5 rounded-lg md:rounded-2xl border-2 border-emerald-400/50 bg-emerald-500/10 backdrop-blur-md hover:bg-emerald-500/20 hover:border-emerald-400 transition-all text-[9px] md:text-lg font-bold text-emerald-50 shadow-lg md:shadow-xl hover:-translate-y-1 active:scale-95 text-center flex-1 group"
             >
-              Invite Friends
+              <span className="relative z-10">Invite Friends</span>
+              {/* Prize Badge - Moved to Bottom Right */}
+              <div className="absolute -bottom-3 -right-2 md:-bottom-4 md:-right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-[7px] md:text-[10px] font-black px-2 md:px-3 py-0.5 md:py-1 rounded-full shadow-lg shadow-yellow-500/40 animate-bounce group-hover:scale-110 transition-transform whitespace-nowrap uppercase tracking-wider">
+                Win Prizes! 🎁
+              </div>
             </a>
           </div>
         </motion.div>
