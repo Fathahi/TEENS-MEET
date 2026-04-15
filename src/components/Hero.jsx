@@ -7,7 +7,7 @@ const Hero = () => {
   const bgImage = '/main/teensmeet.png'
 
   return (
-    <header id="home" className="relative min-h-screen flex items-end justify-center overflow-hidden pb-10 md:pb-16 mt-[1cm]">
+    <header id="home" className="relative min-h-screen flex items-end justify-center overflow-hidden pb-[20vh] md:pb-16 mt-[1cm]">
       {/* Background Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0">
         <motion.div
@@ -94,7 +94,7 @@ const Hero = () => {
 
           {/* Subheader */}
           <p className="text-lg md:text-xl text-emerald-50/80 mb-10 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-lg">
-            A program for 10th-grade graduates combining Islamic values with academic guidance. 
+            A program for 10th-grade graduates combining Islamic values with academic guidance.
           </p>
 
           {/* CTAs - Optimized Horizontal Layout: [Schedule] [Register] [Invite] */}

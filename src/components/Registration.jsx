@@ -17,30 +17,30 @@ const FIELD_IDS = {
 };
 
 const PLACES = [
-  'Ayancheri', 'Balussery', 'Changaroth', 'Chelannur', 'City', 'Feroke', 
+  'Ayancheri', 'Balussery', 'Changaroth', 'Chelannur', 'Kozhikode City', 'Feroke', 
   'Kakkodi', 'Kodiyathur', 'Koduvally', 'Koyilandy', 'Kunnamangalam', 
-  'Kuttuyadi', 'Medical College', 'Meppayyur', 'Mukkam', 'Nadapuram', 
+  'Kuttiady', 'Medical College', 'Meppayur', 'Mukkam', 'Nadapuram', 
   'NIT', 'Omassery', 'Payyoli', 'Perambra', 'Thamarassery', 'Thiruvambady', 
-  'Ullyeri', 'Vadakara'
+  'Ulliyeri', 'Vadakara'
 ];
 
 const PLACE_TO_REGION = {
-  'Kuttuyadi': 'Kuttuyadi',
-  'Nadapuram': 'Kuttuyadi',
-  'Ayancheri': 'Kuttuyadi',
-  'Changaroth': 'Kuttuyadi',
-  'Vadakara': 'Meppayyur',
-  'Perambra': 'Meppayyur',
-  'Meppayyur': 'Meppayyur',
-  'Payyoli': 'Meppayyur',
-  'Ullyeri': 'Meppayyur',
+  'Kuttiady': 'Kuttiady',
+  'Nadapuram': 'Kuttiady',
+  'Ayancheri': 'Kuttiady',
+  'Changaroth': 'Kuttiady',
+  'Vadakara': 'Meppayur',
+  'Perambra': 'Meppayur',
+  'Meppayur': 'Meppayur',
+  'Payyoli': 'Meppayur',
+  'Ulliyeri': 'Meppayur',
   'Balussery': 'Balussery',
   'Koyilandy': 'Balussery',
   'Chelannur': 'Balussery',
   'Kakkodi': 'Balussery',
-  'Medical College': 'City',
-  'City': 'City',
-  'Feroke': 'City',
+  'Medical College': 'Kozhikode City',
+  'Kozhikode City': 'Kozhikode City',
+  'Feroke': 'Kozhikode City',
   'Mukkam': 'Mukkam',
   'NIT': 'Mukkam',
   'Kunnamangalam': 'Mukkam',
@@ -53,10 +53,10 @@ const PLACE_TO_REGION = {
 
 const REGIONS = [
   'Balussery',
-  'Kuttuyadi',
-  'Meppayyur',
+  'Kuttiady',
+  'Meppayur',
   'Mukkam',
-  'City',
+  'Kozhikode City',
   'Koduvally',
 ];
 

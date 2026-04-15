@@ -3,10 +3,10 @@ import { useReveal } from '../hooks/useReveal'
 
 const REGIONS = [
   { name: 'Balussery',      date: 'May 1-3' },
-  { name: 'Kuttuyadi',      date: 'April 29 - May 1' },
-  { name: 'Meppayyur',      date: 'May 8-10' },
+  { name: 'Kuttiady',       date: 'April 29 - May 1' },
+  { name: 'Meppayur',       date: 'May 8-10' },
   { name: 'Mukkam',         date: 'May 1-3' },
-  { name: 'City',           date: 'May 2-4' },
+  { name: 'Kozhikode City', date: 'May 2-4' },
   { name: 'Koduvally',      date: 'May 1-3' },
 ]
 
