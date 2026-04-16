@@ -2,12 +2,12 @@ import { useState, memo } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
 const REGIONS = [
-  { name: 'Balussery',      date: 'May 1-3' },
-  { name: 'Kuttiady',       date: 'April 29 - May 1' },
-  { name: 'Meppayur',       date: 'May 8-10' },
-  { name: 'Mukkam',         date: 'May 1-3' },
+  { name: 'Balussery', date: 'May 1-3' },
+  { name: 'Kuttiady', date: 'May 1-3' },
+  { name: 'Meppayur', date: 'May 8-10' },
+  { name: 'Mukkam', date: 'May 1-3' },
   { name: 'Kozhikode City', date: 'May 2-4' },
-  { name: 'Koduvally',      date: 'May 1-3' },
+  { name: 'Koduvally', date: 'May 1-3' },
 ]
 
 const LocationSchedule = () => {
@@ -33,8 +33,8 @@ const LocationSchedule = () => {
           </thead>
           <tbody className="divide-y divide-emerald-100">
             {REGIONS.map((region, index) => (
-              <tr 
-                key={index} 
+              <tr
+                key={index}
                 className="hover:bg-emerald-50/50 transition-colors duration-200 group"
               >
                 <td className="px-6 py-5 font-semibold text-emerald-900 group-hover:text-emerald-600">{region.name}</td>
@@ -53,7 +53,7 @@ const LocationSchedule = () => {
       {/* Mobile View: Vertical Cards */}
       <div className="md:hidden space-y-4">
         {REGIONS.map((region, index) => (
-          <div 
+          <div
             key={index}
             className="p-6 rounded-2xl bg-white border border-emerald-100 shadow-lg shadow-emerald-500/5"
           >
@@ -69,10 +69,10 @@ const LocationSchedule = () => {
           </div>
         ))}
       </div>
-      
+
       <div className="mt-12 text-center">
-        <a 
-          href="#register" 
+        <a
+          href="#register"
           className="btn-primary inline-block px-10 py-4 rounded-xl font-bold text-lg"
         >
           Secure Your Spot Now
