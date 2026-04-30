@@ -2,12 +2,12 @@ import { useState, memo } from 'react'
 import { useReveal } from '../hooks/useReveal'
 
 const REGIONS = [
-  { name: 'Balussery', date: 'May 1-3' },
-  { name: 'Kuttiady', date: 'May 1-3' },
+  { name: 'Balussery', date: 'May 10-12' },
+  { name: 'Kuttiady', date: 'May 11-13' },
   { name: 'Meppayur', date: 'May 8-10' },
   { name: 'Mukkam', date: 'May 1-3' },
   { name: 'Kozhikode City', date: 'May 2-4' },
-  { name: 'Koduvally', date: 'May 1-3' },
+  { name: 'Koduvally', date: 'May 8-10' },
 ]
 
 const LocationSchedule = () => {
